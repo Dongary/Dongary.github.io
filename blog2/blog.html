@@ -2,29 +2,31 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css">
+
     <style media="screen">
+    .head {
+      width: 180px;
+      margin: auto;
+    }
 
-      .head {
-        background: #e8ece9;
-        width: 250px;
-        margin: auto;
-        font-size: 25px;
-        font-weight: 800;
-      }
+    .a {
+      display: inline;
+      background-color: #aeb0ad;
+      padding: 10px;
+      -webkit-transition: all 0.4s;-moz-transition: all 0.4s;-o-transition: all 0.4s;
+    }
 
-      a {
-        text-decoration: none;
-        color: rgb(14, 13, 13);
-      }
+    .a:hover {
+      background-color: #6f706c;
 
-      span {
+    }
+    .a a {
+      text-decoration: none;
+      line-height: 1.5;
+      color: rgb(237, 241, 244);
 
-      }
+    }
 
-      span:hover {
-        background-color: #bebec1;
-      }
 
       h1,h3 {
         text-align: center;
@@ -32,7 +34,7 @@
 
       .content {
 
-        width: 60%;
+        width: 50%;
         padding: 10px;
         margin: auto;
       }
@@ -51,26 +53,102 @@
      }
 
      .a1 {
-       border-bottom: 1px solid #6f7073;
-
+       padding-bottom: 2px;
+       box-shadow: 3px 3px 3px rgb(204, 204, 204);
      }
+
+    .a1 p a {
+      text-decoration: none;
+      color: rgb(111, 113, 173);
+    }
 
      h6 {
        width: 180px;
        margin: auto;
      }
 
+     .index-tag a {
+ background-color:#c4c4c4;
+ text-decoration: none;
+ border-radius:0 2px 2px 0;
+ color:#fff;
+ display:inline-block;
+ font-size:11px;
+ line-height:1.28;
+ margin:2px 4px 2px 10px;
+ padding:3px 7px;
+ position:relative;
+ transition:all .2s ease-in-out;
+ }
+
+ .index-tag a:before {
+ border-top:10px solid transparent;
+ border-right:8px solid #c4c4c4;
+ border-bottom:10px solid transparent;
+ content:"";
+ height:0;
+ position:absolute;
+ top:0;
+ left:-8px;
+ width:0;
+ transition:all .2s ease-in-out;
+ }
+ .index-tag a:hover {
+   background-color:#919191;
+   color:#fff;
+   }
+   .index-tag a:hover:before {
+   border-right-color:#919191;
+   }
+.a1 .right {
+  float: right;
+}
+
+.a1 .right a {
+  color: rgb(175, 174, 177);
+  font-size: 18px;
+  -webkit-transition: all 0.4s;-moz-transition: all 0.4s;-o-transition: all 0.4s;
+}
+.a1 .right a:hover {
+  color: rgb(105, 96, 104);
+}
+
+h4 {
+  text-align: center;
+}
+h4 .tiaozhuan {
+  float: right;
+  background-color: rgb(207, 206, 206);
+  padding: 3px;
+  border: 2px solid rgb(125, 120, 126);
+  border-radius: 10px;
+}
+h4 .tiaozhuan a {
+  text-decoration: none;
+  color: #555357;
+  -webkit-transition: all 0.4s;-moz-transition: all 0.4s;-o-transition: all 0.4s;
+}
+h4 .tiaozhuan:hover {
+  background-color:#919191;
+
+}
+h4 .tiaozhuan a:hover {
+  color:#fff;
+}
     </style>
     <title>博客</title>
   </head>
   <body>
     <div class="head">
-      <span><a href="#">aaa</a></span>
-      <span><a href="#">bbb</a></span>
-      <span><a href="#">ccc</a></span>
-      <span><a href="#">ddd</a></span>
-      <span><a href="#">eee</a></span>
-      <span><a href="#">fff</a></span>
+      <div class="a">
+        <a href="#">html</a>
+      </div>
+      <div class="a">
+        <a href="#">css</a>
+      </div>
+      <div class="a">
+        <a href="#">javascript</a>
+      </div>
 
     </div>
     <h1>gary博客</h1>
@@ -78,47 +156,123 @@
 
     <div class="content">
       <div class="a1">
-        <p><a href="#">html</a></p>
+        <p><a href="#">Lorem ipsum</a></p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <p>2017年8月1日 || 标签：html || 阅读量：20000</p>
+        <p>
+          2017年8月1日 ||  阅读量：20000 ||
+          <span class="index-tag">
+            <a href="#">
+              html
+            </a>
+          </span>
+          <span class="right">
+            <a href="#">阅读全文→</a>
+          </span>
+        </p>
       </div>
       <br>
       <div class="a1">
-        <p><a href="#">html</a></p>
+        <p><a href="#">Lorem ipsum</a></p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <p>2017年8月1日 || 标签：html || 阅读量：20000</p>
+        <p>
+          2017年8月1日 ||  阅读量：20000 ||
+          <span class="index-tag">
+            <a href="#">
+              html
+            </a>
+          </span>
+          <span class="right">
+            <a href="#">阅读全文→</a>
+          </span>
+        </p>
       </div>
       <br>
       <div class="a1">
-        <p><a href="#">html</a></p>
+        <p><a href="#">Lorem ipsum</a></p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <p>2017年8月1日 || 标签：html || 阅读量：20000</p>
+        <p>
+          2017年8月1日 ||  阅读量：20000 ||
+          <span class="index-tag">
+            <a href="#">
+              html
+            </a>
+          </span>
+          <span class="right">
+            <a href="#">阅读全文→</a>
+          </span>
+        </p>
       </div>
       <br>
       <div class="a1">
-        <p><a href="#">html</a></p>
+        <p><a href="#">Lorem ipsum</a></p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <p>2017年8月1日 || 标签：html || 阅读量：20000</p>
+        <p>
+          2017年8月1日 ||  阅读量：20000 ||
+          <span class="index-tag">
+            <a href="#">
+              html
+            </a>
+          </span>
+          <span class="right">
+            <a href="#">阅读全文→</a>
+          </span>
+        </p>
       </div>
       <br>
       <div class="a1">
-        <p><a href="#">html</a></p>
+        <p><a href="#">Lorem ipsum</a></p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <p>2017年8月1日 || 标签：html || 阅读量：20000</p>
+        <p>
+          2017年8月1日 ||  阅读量：20000 ||
+          <span class="index-tag">
+            <a href="#">
+              html
+            </a>
+          </span>
+          <span class="right">
+            <a href="#">阅读全文→</a>
+          </span>
+        </p>
       </div>
       <br>
       <div class="a1">
-        <p><a href="#">html</a></p>
+        <p><a href="#">Lorem ipsum</a></p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <p>2017年8月1日 || 标签：html || 阅读量：20000</p>
+        <p>
+          2017年8月1日 ||  阅读量：20000 ||
+          <span class="index-tag">
+            <a href="#">
+              html
+            </a>
+          </span>
+          <span class="right">
+            <a href="#">阅读全文→</a>
+          </span>
+        </p>
       </div>
       <br>
       <div class="a1">
-        <p><a href="#">html</a></p>
+        <p><a href="#">Lorem ipsum</a></p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <p>2017年8月1日 || 标签：html || 阅读量：20000</p>
+        <p>
+          2017年8月1日 ||  阅读量：20000 ||
+          <span class="index-tag">
+            <a href="#">
+              html
+            </a>
+          </span>
+          <span class="right">
+            <a href="#">阅读全文→</a>
+          </span>
+        </p>
       </div>
+        <h4>
+          Page 1 of 9
+          <span class="tiaozhuan"><a href="#">next page ⇥</a></span>
+        </h4>
     </div>
+
+
 
     <h6>由腾讯百度联合提供||感谢倾情赞助</h6>
 
