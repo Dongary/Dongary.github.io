@@ -146,15 +146,17 @@
     .content {
       clear: both;
     }
-    .content .con-a,.con-b {
+    .content .con-a,.content .con-b {
       background-color: #fff;
       height: 410px;
-      width: 75%;
+      width: 71.5%;
       border: 2px solid rgb(202, 207, 205);
       margin-top: 30px;
       margin-left: auto;
       margin-right: auto;
-
+    }
+    .content .con-b {
+     height: 600px;
     }
     .con-c {
       margin-bottom: 30px;
@@ -244,12 +246,19 @@
     .con-a .con-a-b .b {
       position: relative;
     }
-    .con-a .con-a-a .b .aa img,.con-a .con-a-b .b .aa img {
+    .con-a .con-a-c .con-cb .b {
+      position: relative;
+    }
+    .con-a .con-a-a .b .aa img,.con-a .con-a-b .b .aa img,.con-a .con-a-c .con-cb .b .aa img {
       width: 200px;
       height: 110px;
     }
 
     .con-a .con-a-a .b .aa,.con-a .con-a-a .b .ab,.con-a .con-a-b .b .aa,.con-a .con-a-b .b .ab {
+      width: 200px;
+      height: 110px;
+    }
+    .con-a .con-a-c .con-cb .b .aa,.con-a .con-a-c .con-cb .b .ab {
       width: 200px;
       height: 110px;
     }
@@ -261,7 +270,15 @@
       top: 85px;
       left: 1px;
       overflow: hidden;
-
+    }
+    .con-a .con-a-c .con-cb .b .ab {
+      width: 200px;
+      height: 25px;
+      font-size: 9px;
+      position: absolute;
+      top: 85px;
+      left: 1px;
+      overflow: hidden;
     }
     .con-a .con-a-a .b .ab:hover {
       width: 200px;
@@ -281,14 +298,23 @@
       left: 1px;
       overflow: hidden;
     }
-    .con-a .con-a-a .b .ab a,.con-a .con-a-b .b .ab a {
+    .con-a .con-a-c .con-cb .b .ab:hover {
+      width: 200px;
+      height: 110px;
+      background-color: rgba(49, 58, 64, 0.49);
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      overflow: hidden;
+    }
+    .con-a .con-a-a .b .ab a,.con-a .con-a-b .b .ab a,.con-a .con-a-c .con-cb .b .ab a {
       text-decoration: none;
       color: #fff;
     }
-    .con-a .con-a-a .b .ab .hide,.con-a .con-a-b .b .ab .hide {
+    .con-a .con-a-a .b .ab .hide,.con-a .con-a-b .b .ab .hide,.con-a .con-a-c .con-cb .b .ab .hide {
       color: #d3d6d5;
     }
-    .con-a .con-a-a .b .ab .ab-play,.con-a .con-a-b .b .ab .ab-play {
+    .con-a .con-a-a .b .ab .ab-play,.con-a .con-a-b .b .ab .ab-play,.con-a .con-a-c .con-cb .b .ab .ab-play {
       background-color: rgb(70, 194, 233);
       font-size: 5px;
       padding: 2px;
@@ -309,6 +335,180 @@
     }
     .con-a .con-a-b .bb {
      margin-top: 20px;
+    }
+    .con-a .con-a-B,.con-a .con-a-c {
+      display: inline-block;
+    }
+    .con-a .con-a-c .con-a-ca img {
+      width: 420px;
+      height: 220px;
+    }
+    .con-a .con-a-c {
+
+
+      width: 420px;
+      height: 370px;
+
+
+    }
+    .con-a .con-a-c .con-ca {
+      position: relative;
+      top: 5px;
+    }
+    .con-a .con-a-c .con-cc {
+     margin-top: 20px;
+
+    }
+    .con-a .con-a-c .con-cb {
+
+      display: inline-block;
+      position: relative;
+      margin-right: 12px;
+    }
+    .con-a .con-a-c .con-cb .b .aa {
+      border: 0;
+    }
+    .con-a .con-a-c .con-cb .BB {
+      margin-top: 20px;
+    }
+    .con-a .con-a-c .con-cc {
+      display: inline-block;
+      width: 200px;
+      position: relative;
+      top: -1px;
+    }
+    .con-a .con-a-c .con-cc .con-cc-h img {
+      width: 200px;
+      height: 225px;
+    }
+    .con-a .con-a-c .con-cc .con-cc-foot {
+      background-color: rgb(145, 145, 145);
+      width: 200px;
+      height: 20px;
+      position: relative;
+      top: -3px;
+    }
+    .con-a .con-a-c .con-cc .con-cc-foot  span a {
+      text-decoration: none;
+      font-size: 13px;
+      color: #fff;
+    }
+    .con-a .con-a-c .con-cc .con-cc-foot  span a:hover {
+      color: red;
+    }
+    .con-a .con-a-B {
+      margin-left: 0;
+    }
+    .con-b .con-b-a .con-b-aa {
+      width: 1080px;
+      height: 50px;
+    }
+    .con-b .con-b-a .con-b-aa .con-b-aa-a {
+
+      width: 430px;
+      height: 40px;
+      display: inline-block;
+    }
+    .con-b .con-b-a .con-b-aa .con-b-aa-a .a {
+      color: rgb(71, 71, 70);
+      font-size: 20px;
+      margin-right: 20px;
+    }
+    .con-b .con-b-a .con-b-aa .con-b-aa-a .b a,.con-b .con-b-a .con-b-aa .con-b-aa-b a {
+      text-decoration: none;
+      color: rgb(130, 127, 129);
+      font-size: 12px;
+    }
+    .con-b .con-b-a .con-b-aa .con-b-aa-a .b a {
+      color: rgb(70, 194, 233);
+    }
+    .con-b .con-b-a .con-b-aa .con-b-aa-a .b a:hover,.con-b .con-b-a .con-b-aa .con-b-aa-b a:hover {
+      color: red;
+    }
+    .con-b .con-b-a .con-b-aa .con-b-aa-a,.con-b .con-b-a .con-b-aa .con-b-aa-b {
+      color: rgb(130, 127, 129);
+      font-size: 12px;
+    }
+    .con-b .con-b-a .con-b-aa .con-b-aa-b {
+
+      width: 630px;
+      height: 40px;
+      text-align: right;
+      display: inline-block;
+    }
+    .con-b .con-b-a .con-b-aa {
+      border-bottom: 1px solid rgb(204, 204, 204);
+      margin: 20px;
+    }
+    .con-b .con-b-a .con-b-ab .con-b-ab-a .a img,.con-b .con-b-a .con-b-ab .con-b-ab-b .a img,.con-b .con-b-a .con-b-ab .con-b-ab-c .a img,.con-b .con-b-a .con-b-ab .con-b-ab-d .a img,.con-b .con-b-a .con-b-ab .con-b-ab-e .a img {
+      width: 197px;
+      height:110px;
+    }
+    .con-b .con-b-a .con-b-ab .con-b-ab-a .a,.con-b .con-b-a .con-b-ab .con-b-ab-b .a,.con-b .con-b-a .con-b-ab .con-b-ab-c .a,.con-b .con-b-a .con-b-ab .con-b-ab-d .a,.con-b .con-b-a .con-b-ab .con-b-ab-e .a {
+      width: 197px;
+      height:110px;
+    }
+    .con-b .con-b-a .con-b-ab .con-b-ab-a .c,.con-b .con-b-a .con-b-ab .con-b-ab-b .c,.con-b .con-b-a .con-b-ab .con-b-ab-c .c,.con-b .con-b-a .con-b-ab .con-b-ab-d .c,.con-b .con-b-a .con-b-ab .con-b-ab-e .c {
+      width: 197px;
+      height:59px;
+    }
+    .con-b .con-b-a .con-b-ab .con-b-ab-a .c a,.con-b .con-b-a .con-b-ab .con-b-ab-b .c a,.con-b .con-b-a .con-b-ab .con-b-ab-c .c a,.con-b .con-b-a .con-b-ab .con-b-ab-d .c a,.con-b .con-b-a .con-b-ab .con-b-ab-e .c a {
+      text-decoration: none;
+      color: rgb(73, 73, 73);
+    }
+    .con-b .con-b-a .con-b-ab .con-b-ab-a .c a:hover,.con-b .con-b-a .con-b-ab .con-b-ab-b .c a:hover,.con-b .con-b-a .con-b-ab .con-b-ab-c .c a:hover,.con-b .con-b-a .con-b-ab .con-b-ab-d .c a:hover,.con-b .con-b-a .con-b-ab .con-b-ab-e .c a:hover {
+
+      color: red;
+    }
+    .con-b .con-b-a .con-b-ab .con-b-ab-a .c span,.con-b .con-b-a .con-b-ab .con-b-ab-b .c span,.con-b .con-b-a .con-b-ab .con-b-ab-c .c span,.con-b .con-b-a .con-b-ab .con-b-ab-d .c span,.con-b .con-b-a .con-b-ab .con-b-ab-e .c span {
+      font-size: 10px;
+      color: rgb(111, 112, 112);
+    }
+    .con-b .con-b-a .con-b-ab .con-b-ab-a,.con-b .con-b-a .con-b-ab .con-b-ab-b,.con-b .con-b-a .con-b-ab .con-b-ab-c,.con-b .con-b-a .con-b-ab .con-b-ab-d,.con-b .con-b-a .con-b-ab .con-b-ab-e {
+      display: inline-block;
+      margin-left: 20px;
+    }
+    .con-b .con-b-a,.con-b .con-b-b {
+      display: inline-block;
+    }
+    .con-b .con-b-b {
+      width: 200px;
+      position: relative;
+      top: -30px;
+    }
+    .con-b .con-b-b .con-b-b-a {
+      padding: 10px;
+      border-bottom: 1px solid rgb(204, 204, 204);
+      margin-bottom: 20px;
+    }
+    .con-b .con-b-b .con-b-b-a a {
+      text-decoration: none;
+      color: rgb(71, 71, 70);
+      font-size: 20px;
+    }
+    .con-b .con-b-b .con-b-b-b a {
+      text-decoration: none;
+      color: rgb(71, 71, 70);
+      font-size: 14px;
+    }
+    .con-b .con-b-b .con-b-b-b a:hover {
+      color: red;
+    }
+    .con-b .con-b-b .con-b-b-b .b-img img {
+      width: 20px;
+      height: 20px;
+    }
+    .con-b .con-b-b .con-b-b-b {
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgb(204, 204, 204);
+      margin-bottom: 8px;
+    }
+    .con-b .con-b-c {
+      margin-left: 20px;
+    }
+    .con-b .con-b-c a img {
+      width: 1320px;
+      height: 140px;
     }
     </style>
     <title>优酷静态网页</title>
@@ -523,15 +723,347 @@
             </div>
           </div>
         </div>
-
-
-
-
+        <div class="con-a-b con-a-B">
+          <div class="b">
+            <div class="aa">
+              <img class="quic lazyImg" alt="//r1.ykimg.com/05100000595F4C058B6C58E41F007FBD" src="img/c-a/0f02d001250e81e4e2edc1f870f9fdc0.jpg">
+            </div>
+            <div class="ab">
+              <ul class="pos-bottom">
+                         <li class="caption">
+                 <a href="" title="&lt;楚乔传&gt;楚乔护卫遇险昏迷 宇文玥飞奔救援">&lt;楚乔传&gt; 宇文玥飞奔救援</a>
+                     </li>
+             <li class="hide">
+           西魏乱世间的虐心爱恋
+             </li>
+             <li class="hide">
+                 <span>34.5亿次播放</span>
+                       <span>11.3万次评论</span>
+             </li>
+             <li class="wrap">
+               <br>
+              <a class="ab-play" href="" title="&lt;楚乔传&gt;楚乔护卫遇险昏迷 宇文玥飞奔救援" >立刻播放</a>
+             </li>
+             </ul>
+            </div>
+          </div>
+          <div class="b bb">
+            <div class="aa">
+              <img class="quic lazyImg" alt="//r1.ykimg.com/05100000595F4C058B6C58E41F007FBD" src="img/c-a/0f02d001250e81e4e2edc1f870f9fdc0.jpg">
+            </div>
+            <div class="ab">
+              <ul class="pos-bottom">
+                         <li class="caption">
+                 <a href="" title="&lt;楚乔传&gt;楚乔护卫遇险昏迷 宇文玥飞奔救援">&lt;楚乔传&gt; 宇文玥飞奔救援</a>
+                     </li>
+             <li class="hide">
+           西魏乱世间的虐心爱恋
+             </li>
+             <li class="hide">
+                 <span>34.5亿次播放</span>
+                       <span>11.3万次评论</span>
+             </li>
+             <li class="wrap">
+               <br>
+              <a class="ab-play" href="" title="&lt;楚乔传&gt;楚乔护卫遇险昏迷 宇文玥飞奔救援" >立刻播放</a>
+             </li>
+             </ul>
+            </div>
+          </div>
+          <div class="b bb">
+            <div class="aa">
+              <img class="quic lazyImg" alt="//r1.ykimg.com/05100000595F4C058B6C58E41F007FBD" src="img/c-a/0f02d001250e81e4e2edc1f870f9fdc0.jpg">
+            </div>
+            <div class="ab">
+              <ul class="pos-bottom">
+                         <li class="caption">
+                 <a href="" title="&lt;楚乔传&gt;楚乔护卫遇险昏迷 宇文玥飞奔救援">&lt;楚乔传&gt; 宇文玥飞奔救援</a>
+                     </li>
+             <li class="hide">
+           西魏乱世间的虐心爱恋
+             </li>
+             <li class="hide">
+                 <span>34.5亿次播放</span>
+                       <span>11.3万次评论</span>
+             </li>
+             <li class="wrap">
+               <br>
+              <a class="ab-play" href="" title="&lt;楚乔传&gt;楚乔护卫遇险昏迷 宇文玥飞奔救援" >立刻播放</a>
+             </li>
+             </ul>
+            </div>
+          </div>
+        </div>
+        <div class="con-a-c">
+          <div class="con-ca">
+            <a href="#"><img class="quic lazyImg" alt="//r1.ykimg.com/05100000595F4C058B6C58E41F007FBD" src="img/420-110.jpg"></a>
+          </div>
+          <div class="con-cb">
+            <div class="b">
+              <div class="aa">
+                <img class="quic lazyImg" alt="//r1.ykimg.com/05100000595F4C058B6C58E41F007FBD" src="img/c-a/0f02d001250e81e4e2edc1f870f9fdc0.jpg">
+              </div>
+              <div class="ab">
+                <ul class="pos-bottom">
+                           <li class="caption">
+                   <a href="" title="&lt;楚乔传&gt;楚乔护卫遇险昏迷 宇文玥飞奔救援">&lt;楚乔传&gt; 宇文玥飞奔救援</a>
+                       </li>
+               <li class="hide">
+             西魏乱世间的虐心爱恋
+               </li>
+               <li class="hide">
+                   <span>34.5亿次播放</span>
+                         <span>11.3万次评论</span>
+               </li>
+               <li class="wrap">
+                 <br>
+                <a class="ab-play" href="" title="&lt;楚乔传&gt;楚乔护卫遇险昏迷 宇文玥飞奔救援" >立刻播放</a>
+               </li>
+               </ul>
+              </div>
+            </div>
+            <div class="b BB">
+              <div class="aa">
+                <img class="quic lazyImg" alt="//r1.ykimg.com/05100000595F4C058B6C58E41F007FBD" src="img/c-a/0f02d001250e81e4e2edc1f870f9fdc0.jpg">
+              </div>
+              <div class="ab">
+                <ul class="pos-bottom">
+                           <li class="caption">
+                   <a href="" title="&lt;楚乔传&gt;楚乔护卫遇险昏迷 宇文玥飞奔救援">&lt;楚乔传&gt; 宇文玥飞奔救援</a>
+                       </li>
+               <li class="hide">
+             西魏乱世间的虐心爱恋
+               </li>
+               <li class="hide">
+                   <span>34.5亿次播放</span>
+                         <span>11.3万次评论</span>
+               </li>
+               <li class="wrap">
+                 <br>
+                <a class="ab-play" href="" title="&lt;楚乔传&gt;楚乔护卫遇险昏迷 宇文玥飞奔救援" >立刻播放</a>
+               </li>
+               </ul>
+              </div>
+            </div>
+          </div>
+          <div class="con-cc">
+          <div class="con-cc-h">
+            <img src="img/c-a/04f6fd7a5df8e1884651d73c12b3118b.jpg" alt="">
+          </div>
+          <div class="con-cc-foot">
+            <span><a href="#">极挑7月9日爆笑回归</a></span>
+            <span><a href="#">详细信息 >></a></span>
+          </div>
+          </div>
+        </div>
       </div>
 
       <div class="con-b">
+     <div class="con-b-a">
+      <div class="con-b-aa">
+        <div class="con-b-aa-a">
+          <span class="a">
+            <img src="img/c-b/05100000570632BE67BC3D391C057059.png" alt="">
+            优酷懂你
+          </span >
+          <span class="b">猜的不准么？ <a href="#">登录</a> 后再看看吧~~</span>
+        </div>
+        <div class="con-b-aa-b">
+          <span><a href="#">换一换</a></span>
+        </div>
+        </div>
 
+        <div class="con-b-ab">
+          <div class="con-b-ab-a">
+            <div class="a">
+              <img src="img/c-b/831f8edec19372d2cb8db96245fc6c5c.jpg" alt="">
+            </div>
+
+            <div class="c">
+              <a href="#">恐怖片的另类打开方式</a>
+              <br>
+              <br>
+              <span>13.20万次播放</span>
+              <span>83次评论</span>
+            </div>
+            <div class="a">
+              <img src="img/c-b/831f8edec19372d2cb8db96245fc6c5c.jpg" alt="">
+            </div>
+
+            <div class="c">
+              <a href="#">恐怖片的另类打开方式</a>
+              <br>
+              <br>
+              <span>13.20万次播放</span>
+              <span>83次评论</span>
+            </div>
+          </div>
+          <div class="con-b-ab-b">
+            <div class="a">
+              <img src="img/c-b/831f8edec19372d2cb8db96245fc6c5c.jpg" alt="">
+            </div>
+
+            <div class="c">
+              <a href="#">恐怖片的另类打开方式</a>
+              <br>
+              <br>
+              <span>13.20万次播放</span>
+              <span>83次评论</span>
+            </div>
+            <div class="a">
+              <img src="img/c-b/831f8edec19372d2cb8db96245fc6c5c.jpg" alt="">
+            </div>
+
+            <div class="c">
+              <a href="#">恐怖片的另类打开方式</a>
+              <br>
+              <br>
+              <span>13.20万次播放</span>
+              <span>83次评论</span>
+            </div>
+          </div>
+          <div class="con-b-ab-c">
+            <div class="a">
+              <img src="img/c-b/831f8edec19372d2cb8db96245fc6c5c.jpg" alt="">
+            </div>
+
+            <div class="c">
+              <a href="#">恐怖片的另类打开方式</a>
+              <br>
+              <br>
+              <span>13.20万次播放</span>
+              <span>83次评论</span>
+            </div>
+            <div class="a">
+              <img src="img/c-b/831f8edec19372d2cb8db96245fc6c5c.jpg" alt="">
+            </div>
+
+            <div class="c">
+              <a href="#">恐怖片的另类打开方式</a>
+              <br>
+              <br>
+              <span>13.20万次播放</span>
+              <span>83次评论</span>
+            </div>
+          </div>
+          <div class="con-b-ab-d">
+            <div class="a">
+              <img src="img/c-b/831f8edec19372d2cb8db96245fc6c5c.jpg" alt="">
+            </div>
+
+            <div class="c">
+              <a href="#">恐怖片的另类打开方式</a>
+              <br>
+              <br>
+              <span>13.20万次播放</span>
+              <span>83次评论</span>
+            </div>
+            <div class="a">
+              <img src="img/c-b/831f8edec19372d2cb8db96245fc6c5c.jpg" alt="">
+            </div>
+
+            <div class="c">
+              <a href="#">恐怖片的另类打开方式</a>
+              <br>
+              <br>
+              <span>13.20万次播放</span>
+              <span>83次评论</span>
+            </div>
+          </div>
+          <div class="con-b-ab-e">
+            <div class="a">
+              <img src="img/c-b/831f8edec19372d2cb8db96245fc6c5c.jpg" alt="">
+            </div>
+
+            <div class="c">
+              <a href="#">恐怖片的另类打开方式</a>
+              <br>
+              <br>
+              <span>13.20万次播放</span>
+              <span>83次评论</span>
+            </div>
+            <div class="a">
+              <img src="img/c-b/831f8edec19372d2cb8db96245fc6c5c.jpg" alt="">
+            </div>
+
+            <div class="c">
+              <a href="#">恐怖片的另类打开方式</a>
+              <br>
+              <br>
+              <span>13.20万次播放</span>
+              <span>83次评论</span>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="con-b-b">
+        <div class="con-b-b-a">
+          <a href="#">产品大全 ></a>
+        </div>
+
+
+        <div class="con-b-b-b">
+          <span class="b-img"><img src="img/c-b/1.png" alt=""></span>
+          <a href="#">来&nbsp&nbsp&nbsp疯</a>
+          |
+          <a href="#">热门主播</a>
+          <a href="#">来疯APP</a>
+        </div>
+        <div class="con-b-b-b">
+          <span class="b-img"><img src="img/c-b/2.png" alt=""></span>
+          <a href="#">话&nbsp&nbsp&nbsp题</a>
+          |
+          <a href="#">热门话题</a>
+          <a href="#">创建话题</a>
+        </div>
+        <div class="con-b-b-b">
+          <span class="b-img"><img src="img/c-b/3.png" alt=""></span>
+          <a href="#">直&nbsp&nbsp&nbsp播</a>
+          |
+          <a href="#">优酷直播</a>
+          <a href="#">全部直播</a>
+        </div>
+        <div class="con-b-b-b">
+          <span class="b-img"><img src="img/c-b/4.png" alt=""></span>
+          <a href="#">自频道</a>
+          |
+          <a href="#">社区论坛</a>
+          <a href="#">视频学院</a>
+        </div>
+        <div class="con-b-b-b">
+          <span class="b-img"><img src="img/c-b/5.png" alt=""></span>
+          <a href="#">众&nbsp&nbsp&nbsp筹</a>
+          |
+          <a href="#">最新项目</a>
+          <a href="#">发起项目</a>
+        </div>
+        <div class="con-b-b-b">
+          <span class="b-img"><img src="img/c-b/6.png" alt=""></span>
+          <a href="#">玩游戏</a>
+          |
+          <a href="#">青云志气</a>
+          <a href="#">蓝月传奇</a>
+        </div>
+        <div class="con-b-b-b">
+          <span class="b-img"><img src="img/c-b/7.png" alt=""></span>
+          <a href="#">优酷VR</a>
+          |
+          <a href="#">VR APP</a>
+          <a href="#">精彩内容</a>
+        </div>
+        <div class="con-b-b-b">
+          <span class="b-img"><img src="img/c-b/8.png" alt=""></span>
+          <a href="#">其&nbsp&nbsp&nbsp他</a>
+          |
+          <a href="#">小小优酷</a>
+          <a href="#">玩剧APP</a>
+        </div>
+      </div>
+      <div class="con-b-c">
+        <a href="#"><img src="img/c-b/1300-100.jpg" alt=""></a>
+      </div>
+      </div>
+
       <div class="con-b">
 
       </div>
