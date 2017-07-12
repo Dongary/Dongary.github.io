@@ -30,8 +30,10 @@
         text-decoration: none;
       }
       .headA {
+
         background-color: #fff;
         border-bottom: 1px solid rgb(217, 217, 217);
+
       }
       .headaa {
       }
@@ -105,6 +107,7 @@
       font-size: 20.5px;
     }
     .headB {
+
       height: 40px;
       background-color: #fff;
     }
@@ -863,6 +866,22 @@
     #cont a:hover {
       background-position: -60px 0;
     }
+    #mrt-bar a {
+      display: block;
+    }
+    #mrt-bar a img {
+      opacity: 0.4;
+    }
+    #mrt-bar a img:hover {
+      opacity: 1.0
+    }
+    #mrt-bar {
+      position: fixed;
+      bottom: 329px;
+      right: 25px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
     </style>
     <title>优酷静态网页</title>
@@ -887,10 +906,11 @@
             <ul class="h-cra">
               <li class="a"><a href="#">登录</a></li>
               <li class="a"><a href="#">注册</a></li>
+              <li class="a"><a href="#">消息</a></li>
               <li class="a"><a href="#">记录</a></li>
-              <li class="a"><a href="#">信息</a></li>
               <li class="a"><a href="#">上传</a></li>
-            </ul>
+
+              </ul>
           </div>
           <div class="h-r">
             <input type="text" name="" value="军师联盟" class="ina">
@@ -1456,7 +1476,7 @@
       </div>
       </div>
 
-      <div class="con-b con-c">
+      <div class="con-b con-c" id="juji">
         <div class="con-c-a">
           <div class="con-c-a-a">
             <img src="img/c-b/051000005706326467BC3D382308E5E8.png" alt="">
@@ -1589,7 +1609,7 @@
         </div>
       </div>
 
-      <div class="con-b con-d" style="height:420px;">
+      <div class="con-b con-d" style="height:420px;" id="zongyi">
         <div class="con-d-a" id="cona">
           <div class="con-d-aa" id="cl" style="margin-right:820px;">
             <span id="cl-a"><img src="img/c-b/zongyi.png" alt=""> <a href="#">综艺&nbsp&nbsp > </a> </span>
@@ -1683,7 +1703,7 @@
         </div>
       </div>
 
-      <div class="con-b con-e" style="height:710px;">
+      <div class="con-b con-e" style="height:710px;" id="video">
         <div class="con-e-a" id="cona">
           <div class="con-e-aa" id="cl">
             <span id="cl-a"><img src="img/c-b/video.png" alt=""> <a href="#">电影&nbsp&nbsp > </a> </span>
@@ -1809,7 +1829,7 @@
 
       </div>
       </div>
-      <div class="con-b con-f" style="height:250px;">
+      <div class="con-b con-f" style="height:250px;" id="dongman">
         <div class="con-f-a" id="cona">
           <div class="con-f-aa" id="cl">
             <span id="cl-a"><img src="img/c-b/dongman.png" alt=""> <a href="#">动漫&nbsp&nbsp > </a> </span>
@@ -1867,7 +1887,7 @@
         </div>
       </div>
 
-      <div class="con-b con-g" style="height:250px;">
+      <div class="con-b con-g" style="height:250px;" id="child">
         <div class="con-g-a" id="cona">
           <div class="con-g-aa" id="cl">
             <span id="cl-a"><img src="img/c-b/child.png" alt=""> <a href="#">少儿&nbsp&nbsp > </a> </span>
@@ -1924,7 +1944,7 @@
           </div>
       </div>
 
-      <div class="con-b con-h" style="height:550px;">
+      <div class="con-b con-h" style="height:550px;" id="zipindao">
         <div class="con-h-a" id="cona">
           <div class="con-d-aa" id="cl">
             <span id="cl-a"><img src="img/c-b/4.png" alt=""> <a href="#">自频道精选&nbsp&nbsp > </a> </span>
@@ -2024,7 +2044,7 @@
 
       </div>
 
-      <div class="con-b con-d con-i" style="height:420px;">
+      <div class="con-b con-d con-i" style="height:420px;" id="play">
         <div class="con-i-a" id="cona">
           <div class="con-i-aa" id="cl">
             <span id="cl-a"><img src="img/c-b/play.png" alt=""> <a href="#">娱乐&nbsp&nbsp > </a> </span>
@@ -2110,7 +2130,7 @@
       </div>
       </div>
 
-      <div class="con-b con-j" style="height:420px;">
+      <div class="con-b con-j" style="height:420px;" id="happy">
         <div class="con-j-a" id="cona">
           <div class="con-d-aa" id="cl">
             <span id="cl-a"><img src="img/c-b/happy.png" alt=""> <a href="#">搞笑&nbsp&nbsp > </a> </span>
@@ -2208,7 +2228,7 @@
 
       </div>
 
-      <div class="con-b con-k" style="height:250px;">
+      <div class="con-b con-k" style="height:250px;" id="song">
         <div class="con-e-a" id="cona">
           <div class="con-e-aa" id="cl" style="margin-right:760px;">
             <span id="cl-a"><img src="img/c-b/song.png" alt=""> <a href="#">音乐&nbsp&nbsp > </a> </span>
@@ -2701,9 +2721,21 @@
         <a  href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/0D76560AE65141FF9FEFE3481D205C50">经营单位</a>
         <a  href="http://www.12377.cn/">暴恐音视频举报专区</a>
         <div style="text-align: center;margin-top:8px;">
-            <a style="padding-left:0;" href='https://credit.szfw.org/CX20170616038883280388.html' target='_blank'><img src='img/foot/0510000059479119ADC0B05C010B4454.png' border='0' /></a>
+            <a style="padding-left:0;" href='https://credit.szfw.org/CX20170616038883280388.html'><img src='img/foot/0510000059479119ADC0B05C010B4454.png' border='0' /></a>
        </div>
     </div>
+    </div>
+
+    <div class="mright-bar" id="mrt-bar">
+      <a href="#juji" title="剧集"><img src="img/c-b/051000005706326467BC3D382308E5E8.png" alt="" style="width:28px; height:28px;"></a>
+      <a href="#zongyi" title="综艺"><img src="img/c-b/zongyi.png" alt="" style="width:28px; height:28px;"></a>
+      <a href="#video" title="电影"><img src="img/c-b/video.png" alt="" style="width:28px; height:28px;"></a>
+      <a href="#dongman" title="动漫"><img src="img/c-b/dongman.png" alt="" style="width:28px; height:28px;"></a>
+      <a href="#child" title="少儿"><img src="img/c-b/child.png" alt="" style="width:28px; height:28px;"></a>
+      <a href="#zipindao" title="自频道"><img src="img/c-b/zipindao.png" alt="" style="width:28px; height:28px;"></a>
+      <a href="#play" title="游戏"><img src="img/c-b/play.png" alt="" style="width:28px; height:28px;"></a>
+      <a href="#happy" title="娱乐"><img src="img/c-b/happy.png" alt="" style="width:28px; height:28px;"></a>
+      <a href="#song" title="音乐"><img src="img/c-b/song.png" alt="" style="width:28px; height:28px;"></a>
     </div>
 
     <div class="bottom" id="bom-bar" >
