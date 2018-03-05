@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Gary Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一、“无”的哲学 佛家讲究“因果报应”，有果必有应。此段看似与主题没有血缘关系，实际讲的是“因”。 我个人比较喜欢老子的道家思想，并喜欢以其思想解释学习与工作中遇到的一些问题。例如我之前写过的“中国古代道家思想与网页重构的思考”一文。 老子有云：“天下万物生于有，有生于无”。具体解释就是：天下万物都是由看得见的具体事物（“有”）产生的，而看得见的具体事物（“有”）又是由看不见的，无形无状的东西（“">
+<meta property="og:type" content="article">
+<meta property="og:title" content="精简高效的CSS命名准则-方法">
+<meta property="og:url" content="http://yoursite.com/2018/03/05/精简高效的CSS命名准则-方法/index.html">
+<meta property="og:site_name" content="Gary Blog">
+<meta property="og:description" content="一、“无”的哲学 佛家讲究“因果报应”，有果必有应。此段看似与主题没有血缘关系，实际讲的是“因”。 我个人比较喜欢老子的道家思想，并喜欢以其思想解释学习与工作中遇到的一些问题。例如我之前写过的“中国古代道家思想与网页重构的思考”一文。 老子有云：“天下万物生于有，有生于无”。具体解释就是：天下万物都是由看得见的具体事物（“有”）产生的，而看得见的具体事物（“有”）又是由看不见的，无形无状的东西（“">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-05T10:31:28.766Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="精简高效的CSS命名准则-方法">
+<meta name="twitter:description" content="一、“无”的哲学 佛家讲究“因果报应”，有果必有应。此段看似与主题没有血缘关系，实际讲的是“因”。 我个人比较喜欢老子的道家思想，并喜欢以其思想解释学习与工作中遇到的一些问题。例如我之前写过的“中国古代道家思想与网页重构的思考”一文。 老子有云：“天下万物生于有，有生于无”。具体解释就是：天下万物都是由看得见的具体事物（“有”）产生的，而看得见的具体事物（“有”）又是由看不见的，无形无状的东西（“">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/05/精简高效的CSS命名准则-方法/"/>
+
+
+
+
+
+  <title>精简高效的CSS命名准则-方法 | Gary Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Gary Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/05/精简高效的CSS命名准则-方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gary">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gary Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">精简高效的CSS命名准则-方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T18:26:24+08:00">
+                2018-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>一、“无”的哲学</p>
+<p>佛家讲究“因果报应”，有果必有应。此段看似与主题没有血缘关系，实际讲的是“因”。</p>
+<p>我个人比较喜欢老子的道家思想，并喜欢以其思想解释学习与工作中遇到的一些问题。例如我之前写过的“中国古代道家思想与网页重构的思考”一文。</p>
+<p>老子有云：“天下万物生于有，有生于无”。具体解释就是：天下万物都是由看得见的具体事物（“有”）产生的，而看得见的具体事物（“有”）又是由看不见的，无形无状的东西（“无”）产生的，这个看不见的“无”也就是“道”，或叫做“根”、“母”。</p>
+<p>我们看武侠片，经常听到“无招胜有招”这句话，这也是道家“无”之思想之体现。因为你心中没有招式，你才能有无限的可能，生成其他的招式以克敌，即所谓以不变应万变；相反，如果你心中牢记一套“华山剑法”，当你与人交手时，势必按照此套路走，要是遇到相克之剑法，结局就是一败涂地。“无招”是一种境界，是你功夫修炼到一定程度才能领悟到的。我们这代人应该都看过李连杰主演的《倚天屠龙记魔教教主》，其中张三丰老头教完张无忌太极拳后问他“记住了没？”张无忌一句“全忘记了！”让人印象深刻。这就是“无”的境界。</p>
+<p>这种境界我是深有体会的。例如每逢大考之前，我总是把以前做过的题目全部忘掉，这样，考试时就能思如泉涌；反而是强记题目的做法限制了发挥。这就好比发射炮弹，炮管里提前预装了重型炸蛋，结果战斗开始时，发现需要的是烟雾弹，此时，反而被预装的炸蛋给阻塞限制了。打篮球也有这种体会，如果心中记得的是动作，我要这么走，然后这么做，往往表现不佳。反而是脑中什么想法也没有，全靠下意识行动，那真是所向披靡，得分如探囊取物。</p>
+<p>可见，要想发挥更大，就需要“无”，把一些“限制的东西”通通去掉。没有限制才能发挥出最大的潜能。站在最简单，最原始的那个点上，你才能自由驰骋，应变自如。</p>
+<p>二、名字的本质是什么</p>
+<p>我们有没有思考过这么一个问题：名字的本质是什么？<br>这个问题其实不难，名字本质上就是一个符号，用来区分人与人的。与符号一样，名字本身就蕴含着很多的信息。举个例子，我的名字：张鑫旭。其中蕴含的信息有：我老爸也姓张，我是上午太阳刚刚升起的时候出生的，我五行缺金。一个名字，如果其蕴含的信息越多，则这个名字就越独特，也就是说，越不可能被别人使用；相反如果这个名字很普通，例如李娜、张艳之类，就会被大规模的重用，OK，这其实没什么大不了的，我们的唯一身份标识不是名字，而是身份证，但是，对于CSS样式的命名，冲突与否可不是拉便便，擦个屁股就没事的。</p>
+<p>对于CSS，为了避免样式冲突，我们总会给其赋予相当特殊的命名，或是在选择符上添加HTML标记，或是使用层级。所谓一朝怕蛇咬，十年怕井绳。一旦我们经历过样式冲突带来的让人吐血的麻烦后，我们可能就会时时在避免冲突上狠做文章，所谓过犹不及，结果又是一个烂摊子，本如花似玉的黄花小闺女变成个臃肿的肥妞。</p>
+<p>我想我们都希望写出精简高效的CSS代码，如果CSS重用性越高，想必就越高效。这如人的名字一样，如果名字越普通，越没有含义，越容易被重用，所以CSS要想重用性高，就需要命名简单。但是，简单的命名越容易造成样式冲突，例如.more{}。从这点上来说，重用性与样式冲突时两个对立的矛盾体。</p>
+<p>不过，万幸的是，这种矛盾并不是不可调和的。记住一些准则/方法，CSS既可以有高度的重用性，又不会有样式冲突的困扰。下面就将介绍这些命名方法。</p>
+<p>三、面向属性的命名方法</p>
+<p>我们习惯在CSS命名的时候掺杂语义，这样可以让代码更易懂。例如淘宝首页“免费注册”按钮上的class名称：help-guest-regist<br>淘宝首页注册按钮的class命名</p>
+<p>上面的class命名语义就很明显，独眼龙看告示——一目了然，”help-guest-regist”就是”帮助-顾客-注册”，很nice，很人性化的命名。作为在单一的首页上使用，我是很难挑出什么毛病来的。</p>
+<p>但是，从道家“无”的哲学思想来看，语义其实是对自身的一种束缚，越是语义强烈的命名越是没有重用性（尤其是内容语义的）。举个实际点的例子，例如人人网的右侧边栏的标题：//zxx:一般找这类反例我就喜欢找人人网还有新浪，基本上一找一个准。人人网虽然外表长得跟facebook类似，但是就CSS而言，差距不是一两个档次的。<br>人人网右侧边栏标题</p>
+<p>这个标题的class名是”side-item-header”，样式如下图所示：<br>人人网右边栏标题CSS代码</p>
+<p>现在一切ok，现在设想下，如果页面中间的模块有个标题，其样式也是：</p>
+<p>{padding:0 0 8px; text-align:right;}</p>
+<p>那你发现前面已经有一模一样的CSS样式后，你会怎么办。把中间的标题也用”side-item-header”这个class吗？这里”side”就是表示“边”的意思，这就意味着这个样式用在非侧边栏就是不合理的。你能做的估计即使新命名一个class，就像是”body-item-header”，明明是同样的CSS属性，结果却不能重用（即使使用标识符组合并CSS，这里的命名也是没有重用的）。</p>
+<p>可见命名不合理会大大限制你的CSS重用性。如何命名才能让CSS发挥最大的重用性潜力呢？答案就是“面向属性的命名”。这种命名就是要让你把页面啊设计啊什么的通通塞到马桶里冲走，不要管页面什么位置，什么内容，there is noting, 这儿什么都没有，既然什么都没有，也就没有了任何限制，于是CSS可以自由出入于任何地方，无限重用，而且不用担心冲突，因为“面向属性的命名”就是针对自身属性的一种命名方式，只会overwrite，不会冲突。</p>
+<p>相比很多同行都用过这样的命名方式，只是不够系统，不够大胆、彻底，多浅尝辄止，比如像是开心网，还有时光网的CSS代码的前面一部分样式命名：<br>开心网上针对属性值命名方法时光网面向属性之命名</p>
+<p>我在“CSS样式分离之再分离”一文中就展示过这种命名了，分离为什么可以让样式的重用性放大至最大，就是因为分离后样式的命名就是样式本身。</p>
+<p>就拿上面人人网的标题样式举例，人人网的做法是：</p>
+<p>.side-item-header{padding:0 0 8px; text-align:right;}</p>
+<p>要是我，我会对其进行分离。在实际项目时，text-align:right;这个属性早就在CSS通用样式库里面了，而padding:0 0 8px;则会以padding-bottom:8px;的形式放在网站通用样式库里了（详细请参见我的“我是如何对网站CSS进行架构的”一文）。最后，CSS命名与样式会如下：</p>
+<p>.tr{text-align:right;}<br>.pb8{padding-bottom:8px;}</p>
+<p>而这里分离出来的样式又可以被其他地方使用。是不是有点“吸星大法”的感觉。</p>
+<p>当然，如果网站本身的架构不是对每个侧栏内容进行模块化处理的话，说实话，这里标题的分离还是有点危险的。想想看，如果那天产品经理说底部padding值要改成10像素，啊哦，如果你的网站架构不合理，含这类标题的模块到处塞，会改到你急火攻心，吐血三升而亡的。所以，对于分离，我反复强调，“千万不要对网站通用的元素进行分离”。</p>
+<p>所以，记住精简高效的CSS命名准则之一：对于网站非通用元素，如果样式简单(1~2个属性)，对其分离并使用面向属性的命名方法。</p>
+<p>四、精简高效CSS命名之“三无原则”</p>
+<p>此“三无原则”就是：无ID，无层级，无标签<br>精简高效CSS命名之三无原则</p>
+<p>CSS命名就应该最简单、最直接，直捣黄龙。没有HTML标签，没有层级，这些通通滚蛋，不要。为什么不要，有三大原因：</p>
+<ol>
+<li><p>限制重用<br>我们会使用层级(#test .test)，会使用标签(ul.test)，可能是习惯(没多想)，或是为了避免冲突。但是，我跟你说，从今以后，这种写法让他见鬼去吧（如果不是为了改变CSS优先级的话）。正如开篇论述的哲学观点，你限制越多，越抑制了CSS的重用性。例如#test .test{}这种写法，里面的CSS重用性多大，完全限死在了id为test的元素下，哪有重用性可言；又如ul.test，我勒个去，这个ul标签十有八九就是装饰用的，往这儿一放，同样CSS样式的div标签可以用吗？哭爹喊娘，眼泪汪汪也不管用啊。所以，相信我，层级啊，标签啊什么的，通通见鬼去吧。要知道，层级啊，标签啊作用是什么，是用来提高CSS优先级，把那个字母长的让人发毛的”!important”干掉的。</p>
+</li>
+<li><p>CSS文件大小<br>这瓜子虽小，吃多了也是可以填饱肚子的。所以，你的CSS名称不要像老太太的裹脚布一样，搞得又臭又长，</p>
+</li>
+</ol>
+<p>你看名称的字节数已经比属性还大了，要是这些名称都在15字符以内，乖乖，这个CSS文件可以小个1~2K绝对没有问题的。你看下图这样子的命名，这样子的CSS排版是不是更舒服，更简洁。<br>简洁高效CSS命名示例</p>
+<ol>
+<li>降低了渲染效率<br>来个例子考考大家（以后我面试别人可能就会考这题），HTML如下：</li>
+</ol>
+<div id="test"><br>    <ul class="test"></ul><br></div>
+
+<p>现在要给这里的ul标签一个样式，比如说padding-left:25px;那么下面四种写法哪个渲染速度最快？</p>
+<p>#test .test{}， ul.test{}，#test ul{} 以及.test{}。</p>
+<p>如果单纯的ul与.test PK，我还真拿不定谁的渲染速度更快些。但是，一旦牵扯到层级与标签，我100%确定，.test这种最直接的命名方式渲染效率是最高的。要知道，CSS渲染元素和使用JavaScript获取页面元素那是完全不一样的。如果是使用JavaScript获取DOM元素，则#test ul{}速度是最快的，先id获取，再tag获取，这些可都是JavaScript内置的方法。但是，CSS的渲染方式则是属于外太空系的了，《高性能网站进阶指南》一书曾提到CSS的渲染方式是“从右往左”渲染的，就拿#test ul{}举例，先渲染页面上所有的ul标签，再去寻找id为test的元素，所以，出现#test div{}这种写法的人都是傻×的，页面先渲染id为test的元素？非也！先渲染页面上所有的div，再去寻找其老爸有没有id为test的元素。由于这种渲染差异最大就200~300毫秒（补充：这里的差异不是说单纯一个样式的差异，而是这些写法泛滥的页面的全部渲染，其渲染差异数据可以参见“翻译-不同CSS技术及其CSS性能”一文），我们人一般是感觉不到的。所以，长久以来，也都不以为然。但是，我是绝对容不下这种写法的，还有，要是让我看到类似于ul#test{}这样子的命名，不好意思，面试肯定过不了。</p>
+<p>所以，CSS命名，只要出现了层级，出现了标签，就是一次额外的渲染，层级越多，渲染的开销也就越大，这就是为什么一些前辈的文章会建议要尽量避免过深的层级。这也是为什么要“无层级”，“无标签”。</p>
+<p>对于原则第一条“无ID”，其实与性能没有多大关系，只是一般ID都与JavaScript有奸情，如果再牵扯到CSS样式，如此复杂的三角关系，日后不好处理啊。</p>
+<p>五、“三无原则”遗留之样式冲突问题</p>
+<p>正如上面讲的，层级，标签可以避免样式冲突，虽然“面向属性的命名”不存在冲突问题，但是，页面上很多样式是无法分离使用“面向属性的命名”的，此时，一不能有层级，二不能有标签，如果避免冲突呢？</p>
+<p>首先，规范。项目组所有人的命名方法，习惯都要统一。其次，也是实际的做法，同一内容，使用同一前缀。就如上面的那张图片所示，所有class同一使用od前缀，这样，就绝不会与其他页面的CSS产生冲突了。</p>
+<p>上图中，很多个链接全部存放在一个标签中，全部都是a标签，按照我的“三无原则”，不能使用层级，那么，我这里的每个a标签都得附一个.index_list_a{}这样子的命名吗，这样子repeat下来，页面HTML代码岂不是很大，直接来个.index_list_box a{}，岂不是页面HTML更加清爽。确实有理。实际上，按照我个人实践的经验，这类细小重复的列表元素的样式都是比较简单的，不要忘了，精简高效的CSS命名准则之一的“分离与面向属性命名”，所以，对这里的a标签进行面向属性的命名，权衡后期的重用性和HTML代码开销，还是直接针对a标签进行简单命名是最佳解决方案。</p>
+<p>但是，不排除这类最内层标签且重复元素的样式会很复杂，此时，使用层级与标签，或许是更好的做法，但这只存在于一些非常特殊的情况。对了，我们看看点评网是如何对最内层且重复的a标签进行处理的，如下图：<br>点评网处理小列表元素做法</p>
+<p>点评网是使用的一个大写的”B”作为此样式，无论这里的”B”是有background之意，还是邪恶的***之意，其命名比“面向属性命名”更甚一筹，可以说是接近真正意义上的nothing，后面可以跟任意属性，用在任意页面，这就是“无”哲学，“无”的境界。//zxx:点评网的这个命名让我闻到了一点Google的气息</p>
+<p>六、结语</p>
+<p>现在，来个简短的总结，精简高效的CSS命名的关键字有“分离”，“统一前缀”，方法为“面向属性的命名”，准则为“无层级、无标签”。其中，“分离”是“面向属性命名”的基础。“面向属性命名”和“无层级、无标签”属于两个不同的系列，一个针对短命名属性，一个针对长命名属性。但是，两个又互相依存。没有“面向属性命名”，“无层级、无标签”命名最后是以不堪重负，HTML膨胀致死结局。而仅仅是“面向属性命名”，前端开发人员会因维护过劳喷血而死。总之，两者缺一不可。</p>
+<p>上述所有内容，都是根据自己的开发总结出来的东西，个人观点，经验之谈。每个人的成长不同，工作环境不同，必然在看到一些问题上会有差异，欢迎交流与讨论。我资历尚浅，文中难免会有不准确的地方，欢迎指正。</p>
+<p>我的这套准则是建立在自己的一套CSS架构上的，我自己用的是非常开心的，而且效果非常明显。但是，到底是否适用于其他同行，我不能保证，毕竟优秀的前端人员心中都有自己的那一套准则。我的个人建议是这样的，如果您还是个CSS新手，或者对我文中提到的一些概念不太理解，我觉得全搬过来不太合适。您可以保留您之前那种一步一趋的写法，然后在这基础上做您确定的改进。如果真能对您CSS的学习提供一些帮助与启示，那真是再好不过了。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/05/道家思想与网页重构/" rel="next" title="道家思想与网页重构">
+                <i class="fa fa-chevron-left"></i> 道家思想与网页重构
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="Gary" />
+            
+              <p class="site-author-name" itemprop="name">Gary</p>
+              <p class="site-description motion-element" itemprop="description">About me! You know nothing!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gary</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

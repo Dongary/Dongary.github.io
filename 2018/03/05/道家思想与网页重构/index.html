@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Gary Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一、关于中国古代道家思想 道家是以老子、庄子为代表的中国春秋战国时期诸子百家中最重要的思想学派之一。道家思想以其独特的宇宙、社会和人生领悟，在哲学思想上呈现出永恒的价值与生命力。 道家思想内容很多，不一一列举，您有兴趣可以点击这里：道家思想（百度百科）、道家（维基百科） 在众多的道家思想内容中，其非常重要的一个核心思想：顺其自然，无为而治，我是非常之推崇，这种哲学思想已经深深地影响到了自己的为人处">
+<meta property="og:type" content="article">
+<meta property="og:title" content="道家思想与网页重构">
+<meta property="og:url" content="http://yoursite.com/2018/03/05/道家思想与网页重构/index.html">
+<meta property="og:site_name" content="Gary Blog">
+<meta property="og:description" content="一、关于中国古代道家思想 道家是以老子、庄子为代表的中国春秋战国时期诸子百家中最重要的思想学派之一。道家思想以其独特的宇宙、社会和人生领悟，在哲学思想上呈现出永恒的价值与生命力。 道家思想内容很多，不一一列举，您有兴趣可以点击这里：道家思想（百度百科）、道家（维基百科） 在众多的道家思想内容中，其非常重要的一个核心思想：顺其自然，无为而治，我是非常之推崇，这种哲学思想已经深深地影响到了自己的为人处">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-05T10:32:37.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="道家思想与网页重构">
+<meta name="twitter:description" content="一、关于中国古代道家思想 道家是以老子、庄子为代表的中国春秋战国时期诸子百家中最重要的思想学派之一。道家思想以其独特的宇宙、社会和人生领悟，在哲学思想上呈现出永恒的价值与生命力。 道家思想内容很多，不一一列举，您有兴趣可以点击这里：道家思想（百度百科）、道家（维基百科） 在众多的道家思想内容中，其非常重要的一个核心思想：顺其自然，无为而治，我是非常之推崇，这种哲学思想已经深深地影响到了自己的为人处">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/05/道家思想与网页重构/"/>
+
+
+
+
+
+  <title>道家思想与网页重构 | Gary Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Gary Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/05/道家思想与网页重构/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gary">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gary Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">道家思想与网页重构</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T18:25:29+08:00">
+                2018-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>一、关于中国古代道家思想</p>
+<p>道家是以老子、庄子为代表的中国春秋战国时期诸子百家中最重要的思想学派之一。道家思想以其独特的宇宙、社会和人生领悟，在哲学思想上呈现出永恒的价值与生命力。</p>
+<p>道家思想内容很多，不一一列举，您有兴趣可以点击这里：道家思想（百度百科）、道家（维基百科）</p>
+<p>在众多的道家思想内容中，其非常重要的一个核心思想：顺其自然，无为而治，我是非常之推崇，这种哲学思想已经深深地影响到了自己的为人处事，思考问题的方式。</p>
+<p>马云老师曾告诉我们，换个角度看这个世界，会得到不一样的启迪。这句话，知道的很多，实际上将这种“换角度看世界”的品质植入内心，形成习惯的有多少呢？中国古代哲学历经千年不灭，是有它存在的道理的。我们用中国式的哲学去看待网页的世界，又会是怎样的呢？我想，这里您会得到一些启示。</p>
+<p>这里，说点题外话，我不是什么哲人，我的观点实际上都是比较肤浅的，而且每个人都有不同的哲学观，所以，本文不旨在改变什么，仅仅是表达一点自己的一些思考。</p>
+<p>二、关于web流行</p>
+<p>流行这个东西可以说无处不在，衣食住行，都有。我们（无论是生成还是消费）总会去追逐流行。然而，流行就意味着短暂，所以，我们总是在不断地去追求流行，追求时尚。但是，一个事物一旦流行了，就意味着它已经不流行了，所以我们永远都追不到流行，可是，换个角度想，这也是事物发展的一个内在动力。</p>
+<p>我们，可以把这个东西放到web设计趋势中，从追求苹果式的水晶按钮效果，再到质感的追求，再到大图背景的流行，再到追求扁平化（可参考IE浏览器界面）。流行的趋势总是在变，所以，对于web设计师，总是要去抓住这个流行趋势，去重新设计页面，于是在web开发中，经常听到的一个词就是改版。我在“网页布局思想浅议-淘宝新版首页为实例”一文中也提到改版一次，那是针对网页宽度，这里则是针对流行时尚。</p>
+<p>几年前某个设计师的个人主页看上去很酷，可是几年后再看，可能感觉就完全不一样了，那个时候，可以他要重新设计一个风格，流行的风格了。</p>
+<p>OK，我似乎在说些偏题的东西，其实不是，我在讲与道家“顺其自然，无为而治”思想相悖的一些现象。追求流行会得到较大的当下的收益，但是也会有较大的追逐成本，这本身没有问题，这也是一种处世哲学。我没有谁对谁错的意思！</p>
+<p>但是，我们也知道，也有网站可以历经几十年都可以不用改版，比如说Google。Google这个网站可以说是中国道家思想最经典的代表。其“无为而治”的体现可谓前后贯穿，从布局（参见我的“网页布局思想浅议-淘宝新版首页为实例”一文），到设计再到代码。我们可以换作另外一个词，可能更好理解一点，众所周知，Google设计最求的是“简洁”，我们也常说“简单自然”，也即是所，追求“简洁”，也就是追求“自然”，正好符合中国古代道家的“顺其自然”之说！</p>
+<p>“顺其自然，无为而治”体现在web上就是“追求简单”，这与“追逐时尚流行”是完全风牛马不相及的，而在时间维度上的表现就是经典与永恒，这就是“顺其自然”的意义所在。</p>
+<p>三、简洁的核心是什么</p>
+<p>我们做web的常会听到一个词，叫做追求简洁。是否静下心来思考，这个简洁的含义到底是什么？是内容少？是去除任何不必要的东西？还是有更深此次的含义。很多网站都称追求简洁的设计，而最终的表现呢？往往差强人意。到底问题出在哪里呢？</p>
+<p>简洁一词的含义与中国道家自然之说有很多共同之处，故追求简洁可以用追求自然代之，再引申之即为追本溯源，返璞归真。这种追求不仅体现在设计上，还体现在代码中。</p>
+<p>自然之于设计<br>追求自然之设计，首先是要剔除不必要的修饰（即使这个修饰会让页面看上去更加“流行”）（如渐变，精美的图标），陶渊明在《归去来兮辞》中写道：“清水出芙蓉，天然去雕饰”，芙蓉无雕饰，故显其天然，其寓意可见一斑。</p>
+<p>其次，保留其本性。类似于实现一点点的文字效果，而将文字用图片代替，如下图：<br>文字用图片代替 张鑫旭-鑫空间-鑫生活</p>
+<p>类似的情况，绝不可能在Google这样真正追求简洁自然的页面上出现的。</p>
+<p>自然之于代码<br>此处代码的自然之说并不是代码数量尽可能少，而是抓住代码的寓意以及本质。</p>
+<p>我们或许看到招聘时要求“深入理解语义化标签”，对于HTML代码而言，不同的标签是有个它特定的含义的，这些特定的含义就为这些标签的自然属性。所以，运用道家思想“顺其自然”来解释就是“顺着HTML标签本来的意思去使用”。</p>
+<p>所以，要是整个页面就一个div标签从头用到尾，包括代替段落，列表。这就有悖“顺其自然”之说，其实也就是违背简洁的设计原则。</p>
+<p>现在，我们再来看Google或是twitter的HTML代码，</p>
+<p>都是使用表格布局，曾几何时，我还疑惑为什么这些顶尖的网站还是使用table布局呢！现在，我意识到，这正体现了“顺其自然，无为而治”的思想，table本来就是布局的，使用了其自然属性没有什么疑惑的，反倒是使用div+float来布局会让人觉得Google这个网站没有自己坚持的设计理念 – 追求简洁。</p>
+<p>页面重构，不仅仅是布局，设计，HTML，还有一个大头就是CSS，我们都知道，浏览器是有默认的一些CSS属性的，例如body的默认margin值，p标签的默认margin值，ul,ol标签的默认margin与padding值，这些值的存在都是由它的意义的。然而，在超过99%的页面对这些属性做了太多的干预，这就有悖了“无为而治”的道家思想。我们来看看Google，它是否也做了太多的干预呢？我们可以发现，Google使用的是浏览器默认的文字颜色，文字的链接，激活颜色也都使用的某一浏览器的默认色，甚至在Google图片页面，含链接图片的默认边框还保留着，颜色也没有修改。我们可能有时会觉得丑，但是其实Google的这种做法正是符合了其追求简洁的做法，其中是有大智慧的。</p>
+<p>自然之于控件<br>我们应该都知道，浏览器对一些表单控件自定义了些样式，按钮，文本输入框，单选/复选框，文本域等。基本上大部分的页面都对这些控件进行了样式干预，例如修改按钮的表现，修改文本框的边框色等等等，不然看上去丑啊。</p>
+<p>为了美观对控件进行修饰无可厚非，但显然，对于那些真正追求简洁的网站来说，对控件的修饰反而是画蛇添足的事情。我们可以看到Google甚至百度在控件上的做法 —— “无为而治”，这正体现了中国古代的道家思想。</p>
+<p>所以，我们可以回答本段标题的问题，简洁核心是什么？在web网页重构中，简洁不仅仅是去掉一些无用的元素、功能，而且是学会利用代码的自然属性，对代码的默认属性尽量不做干预，对浏览器默认的控件表现也不做额外的修饰。总结为一句话：简洁的核心就是自然、无为而治！</p>
+<p>四、CSS重置（CSS reset）的重新审视</p>
+<p>所谓CSS重置，就是让浏览器的默认属性都归为统一，一般做法就是归零。曾几何时，此玩意讨论可谓甚嚣尘上，相关文章层出不穷，一度成为流行。即便当下，也是广泛使用，例如下面的代码（取自新浪首页）：</p>
+<p>/<em> 全局样式 </em>/<br>body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;}<br>body{background:#fff;color:#333;font-size:12px; margin-top:5px;font-family:”宋体”;}</p>
+<p>ul,ol{list-style-type:none;}<br>select,input,img,select{vertical-align:middle;}</p>
+<p>a{text-decoration:underline;}<br>a:link{color:#009;}<br>a:visited{color:#800080;}<br>a:hover,a:active,a:focus{color:#c00;}</p>
+<p>显然，CSS重置与道家的自然之说是相悖的。我发现，就一些著名的网站来讲，现在使用专门使用CSS重置的网站比以前少了，或许这也验证着，流行事物的短暂寿命，追求自然方可成为永恒。</p>
+<p>对于CSS reset，我不做过多的评价，思考还是留给愿意思考的人。我个人是觉得，这个概念会逐渐模糊掉，而我自己，早就不用CSS reset了，因为这与我追求简洁的宗旨是不相符的。</p>
+<p>五、结语</p>
+<p>中国古代的道家思想体现在网页重构中就是对页面简洁的极致追求，这种简洁的追求，从页面的布局，结构，设计，以及HTML与CSS代码的方方面面。最具代表性的网站莫过于Google，在这种“无为而治”的简洁网页设计下的网站可以脱离所谓的流行与时尚，永远站在属于它的那个位置，直至永恒，成为经典。这是道家思想可以千年不衰的原因，在这种思想下形成的网页自然也可以千年不衰。这便是哲学的指导意义所在！</p>
+<p>才疏学浅，都是些雕虫小技，班门弄斧的东西，欢迎指出错误与不足。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/05/回到起点/" rel="next" title="炸了">
+                <i class="fa fa-chevron-left"></i> 炸了
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/05/精简高效的CSS命名准则-方法/" rel="prev" title="精简高效的CSS命名准则-方法">
+                精简高效的CSS命名准则-方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="Gary" />
+            
+              <p class="site-author-name" itemprop="name">Gary</p>
+              <p class="site-description motion-element" itemprop="description">About me! You know nothing!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gary</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
