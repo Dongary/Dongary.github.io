@@ -73,8 +73,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="Gary Blog" type="application/atom+xml" />
 
@@ -91,7 +89,7 @@
 <meta property="og:site_name" content="Gary Blog">
 <meta property="og:description" content="生命周期函数： onLoad:页面加载           一个页面只会调用一次，可以在 onLoad 中获取打开当前页面所调用的 query 参数。 onShow:页面显示           每次打开页面都会调用一次。 onReady:页面初次渲染完成   一个页面只会调用一次，代表页面已经准备妥当，可以和视图层进行交互。 onHide: 页面隐藏           当navigateTo或">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-08T14:36:00.532Z">
+<meta property="og:updated_time" content="2018-03-10T15:48:34.331Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小程序手记n-three">
 <meta name="twitter:description" content="生命周期函数： onLoad:页面加载           一个页面只会调用一次，可以在 onLoad 中获取打开当前页面所调用的 query 参数。 onShow:页面显示           每次打开页面都会调用一次。 onReady:页面初次渲染完成   一个页面只会调用一次，代表页面已经准备妥当，可以和视图层进行交互。 onHide: 页面隐藏           当navigateTo或">
@@ -191,6 +189,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
           </a>
         </li>
       
@@ -324,7 +332,9 @@
 <p>小程序总是会读取DATA对象来做数据绑定，这个动作假设为动作A，而这个动作A是早onLoad事件执行之后发生的。</p>
 <p>template模板的使用：可以把一组常用的代码组合另储存到一个文件里，需要用此模板时用以下代码调用。</p>
 <p>在储存模板的wxml文件里：</p>
-<p><template name="postItem"><br>   需要循环的代码块<br></template><br>在储存模板的wxss文件里:<br>直接粘贴需要复用的样式表代码块即可（注！！要粘贴直接操作上面结构代码的样式表代码，不要粘贴无关的代码）</p>
+<template name="postItem"><br>   需要循环的代码块<br></template>
+
+<p>在储存模板的wxss文件里:<br>直接粘贴需要复用的样式表代码块即可（注！！要粘贴直接操作上面结构代码的样式表代码，不要粘贴无关的代码）</p>
 <p>在需要使用模板的文件里—<br>某xxx.wxml页面：<br>开头</p>
 <p><import src="post-item/post-item-template.wxml"></import></p>
 <block wx:for="" wx:for-item="item"><br><br> <template is="postItem" data=""><br><br></template></block>
@@ -372,6 +382,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/10/小程序手记n-four/" rel="prev" title="小程序手记n-four">
+                小程序手记n-four <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -443,7 +457,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="技术思维," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Gary Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="为了提高开发效率，增强开发体验，我们造了个用 Vue 开发小程序的轮子小程序开发特点微信小程序推荐简洁的开发方式，通过多页面聚合完成轻量的产品功能。小程序以离线包方式下载到本地，通过微信客户端载入和启动，开发规范简洁，技术封装彻底，自成开发体系，有 Native 和 H5 的影子，但又绝不雷同。 小程序本身定位为一个简单的逻辑视图层框架，官方并不推荐用来开发复杂应用，但业务需求却难以做到精简。复杂">
+<meta name="keywords" content="技术思维">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mpVue--完整体验用Vue.js开发小程序">
+<meta property="og:url" content="http://yoursite.com/2018/03/10/mpVue-完整体验用Vue-js开发小程序/index.html">
+<meta property="og:site_name" content="Gary Blog">
+<meta property="og:description" content="为了提高开发效率，增强开发体验，我们造了个用 Vue 开发小程序的轮子小程序开发特点微信小程序推荐简洁的开发方式，通过多页面聚合完成轻量的产品功能。小程序以离线包方式下载到本地，通过微信客户端载入和启动，开发规范简洁，技术封装彻底，自成开发体系，有 Native 和 H5 的影子，但又绝不雷同。 小程序本身定位为一个简单的逻辑视图层框架，官方并不推荐用来开发复杂应用，但业务需求却难以做到精简。复杂">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/03/10/mpVue-完整体验用Vue-js开发小程序/mpvueo.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/03/10/mpVue-完整体验用Vue-js开发小程序/mpvuetw.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/03/10/mpVue-完整体验用Vue-js开发小程序/mpvueth.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/03/10/mpVue-完整体验用Vue-js开发小程序/mpvuefo.jpg">
+<meta property="og:updated_time" content="2018-03-10T16:12:09.582Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mpVue--完整体验用Vue.js开发小程序">
+<meta name="twitter:description" content="为了提高开发效率，增强开发体验，我们造了个用 Vue 开发小程序的轮子小程序开发特点微信小程序推荐简洁的开发方式，通过多页面聚合完成轻量的产品功能。小程序以离线包方式下载到本地，通过微信客户端载入和启动，开发规范简洁，技术封装彻底，自成开发体系，有 Native 和 H5 的影子，但又绝不雷同。 小程序本身定位为一个简单的逻辑视图层框架，官方并不推荐用来开发复杂应用，但业务需求却难以做到精简。复杂">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/10/mpVue-完整体验用Vue-js开发小程序/mpvueo.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/10/mpVue-完整体验用Vue-js开发小程序/"/>
+
+
+
+
+
+  <title>mpVue--完整体验用Vue.js开发小程序 | Gary Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Gary Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/10/mpVue-完整体验用Vue-js开发小程序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gary">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gary Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">mpVue--完整体验用Vue.js开发小程序</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-10T23:54:23+08:00">
+                2018-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>为了提高开发效率，增强开发体验，我们造了个用 Vue 开发小程序的轮子<br>小程序开发特点<br>微信小程序推荐简洁的开发方式，通过多页面聚合完成轻量的产品功能。小程序以离线包方式下载到本地，通过微信客户端载入和启动，开发规范简洁，技术封装彻底，自成开发体系，有 Native 和 H5 的影子，但又绝不雷同。</p>
+<p>小程序本身定位为一个简单的逻辑视图层框架，官方并不推荐用来开发复杂应用，但业务需求却难以做到精简。复杂的应用对开发方式有较高的要求，如组件和模块化、自动构建和集成、代码复用和开发效率等，但小程序开发规范较大地限制了这部分能力。为了解决上述问题，提供更好的开发体验，我们创造了 mpVue，通过使用 Vue.js 开发微信小程序。</p>
+<p>mpVue 是什么<br>mpVue 是一套定位于开发小程序的前端开发框架，其核心目标是提高开发效率，增强开发体验。使用该框架，开发者无须了解小程序开发规范，只需要熟悉 Vue.js 基本语法即可上手。框架提供了完全的 Vue.js 开发体验，开发者编写 Vue.js 代码，mpVue 将其解析转换为小程序并确保其正确运行。此外，框架还通过 CLI 工具向开发者提供 Quick Start 示例代码，开发者只需执行一条简单命令，即可获得可运行的项目。</p>
+<p>为什么做 mpVue<br>在小程序内测之初，我们计划快速迭代出一款对标 H5 的产品实现，其核心诉求在于快速实现、代码复用、低成本和高效率等。随后我们经历了多个小程序建设，结合业务场景、技术选型和小程序开发方式，整理汇总出了开发阶段面临的主要问题：</p>
+<p>组件化机制不够完善；<br>代码多端复用能力欠缺；<br>小程序框架和团队技术栈无法有机结合；<br>小程序学习成本不够低。<br>具体体现为：</p>
+<p>组件机制：小程序逻辑和视图层代码彼此分离，公共组件提取后无法聚合为单文件入口，组件需分别在视图层和逻辑层引入，维护性差；组件无命名空间机制，事件回调必须设置为全局函数，组件设计有命名冲突的风险，数据封装不强。开发者需要友好的代码组织方式，通过 ES 模块一次性导入；组件数据有良好的封装。成熟的组件机制，对工程化开发至关重要。</p>
+<p>多端复用：常见的业务场景有两类，通过已有 H5 产品改造为小程序应用或反之。从效率角度出发，开发者希望通过复用代码完成开发，但小程序开发框架却无法做到。我们曾尝试通过静态代码分析将 H5 代码转换为小程序，但只做了视图层转换，无法带来更多收益。多端代码复用需要更成熟的解决方案。</p>
+<p>另一方面，小程序开发方式与 H5 近似，因此我们考虑和 H5 做代码复用。同时，沿袭团队技术栈选型，我们将 Vue.js 确定为小程序开发规范。使用 Vue.js 开发小程序，将直接带来如下开发效率的提升：</p>
+<p>H5 代码可以通过最小修改复用到小程序；<br>使用 Vue.js 组件机制开发小程序，可实现小程序和 H5 组件复用；<br>技术栈统一后小程序学习成本降低，开发者从 H5 转换到小程序不需要更多学习；<br>代码维护成本降低，Vue.js 代码可以让所有前端直接参与开发维护。<br>为什么是 Vue.js？这取决于团队技术栈选型，引入新的选型对统一技术栈和提高开发效率相悖，有违开发工具服务业务的初衷。</p>
+<p>mpVue 的演进<br>mpVue 的形成，来源于业务场景和需求，最终方案的确定，经历了三个阶段。</p>
+<p>第一阶段：我们实现了一个视图层代码转换工具，旨在提高代码首次开发效率。通过将 H5 视图层代码转换为小程序代码，包括 HTML 标签映射、Vue.js 模板和样式转换，在此目标代码上进行二次开发。我们做到了有限的代码复用，但组件化开发和小程序学习成本并未得到有效改善。<br>第二阶段：我们着眼于完善代码组件化机制。参照 Vue.js 组件规范设计了代码组织形式，通过代码转换工具将代码解析为小程序。转换工具主要解决组件间数据同步、生命周期关联和命名空间问题。最终我们实现了一个 Vue.js 语法子集，但想要实现更多特性或跟随 Vue.js 版本迭代，工作量变得难以估计，有永无止境之感。<br>第三阶段：我们的目标是实现对 Vue.js 语法全集的支持，达到使用 Vue.js 开发小程序的目的。并通过引入 Vue.js RunTime 实现了对 Vue.js 语法的支持，从而避免了人肉语法适配。至此，我们完成了使用 Vue.js 开发小程序的目的。较好地实现了技术栈统一、组件化开发、多端代码复用、降低学习成本和提高开发效率的目标。<br>mpVue 设计思路<br>Vue.js 和小程序都是典型的逻辑视图层框架，逻辑层和视图层之间的工作方式为：数据变更驱动视图更新；视图交互触发事件，事件响应函数修改数据再次触发视图更新，如图 1 所示。<br><img src="/2018/03/10/mpVue-完整体验用Vue-js开发小程序/mpvueo.jpg" alt="小程序实现原理"></p>
+<p>鉴于 Vue.js 和小程序一致的工作原理，我们思考将小程序的功能托管给 Vue.js，在正确的时机将数据变更同步到小程序，从而达到开发小程序的目的。这样，我们可以将精力聚焦在 Vue.js 上，参照 Vue.js 编写与之对应的小程序代码，小程序负责视图层展示，所有业务和逻辑收敛到 Vue.js 中，Vue.js 数据变更后同步到小程序，如图 2 所示。如此一来，我们就获得了以 Vue.js 的方式开发小程序的能力。为此，我们设计的方案如下：<br><img src="/2018/03/10/mpVue-完整体验用Vue-js开发小程序/mpvuetw.jpg" alt="mpVue实现原理"></p>
+<p>Vue 代码：</p>
+<p>将小程序页面编写为 Vue.js 实现；<br>以 Vue.js 开发规范实现父子组件关联。<br>小程序代码：</p>
+<p>以小程序开发规范编写视图层模板；<br>配置生命周期函数，关联数据更新调用；<br>将 Vue.js 数据映射为小程序数据模型。<br>并在此基础上，附加如下机制：</p>
+<p>Vue 实例与小程序 Page 实例建立关联；<br>小程序和 Vue 生命周期建立映射关系，能在小程序生命周期中触发 Vue 生命周期；<br>小程序事件建立代理机制，在事件代理函数中触发与之对应的 Vue 组件事件响应。<br>这套机制总结起来非常简单，但实现却相当复杂。在揭秘具体实现之前，读者可能会有这样一些疑问：</p>
+<p>要同时维护 Vue.js 和小程序，是否需要写两个版本的代码实现？<br>小程序负责视图层展现，Vue.js 的视图层是否还需要，如果不需要应该如何处理？<br>生命周期如何打通，数据同步更新如何实现？<br>上述问题包含了 mpVue 框架的核心内容，下文将仔细为你道来。首先，mpVue 为提高效率而生，本身提供了自动生成小程序代码的能力，小程序代码根据 Vue.js 代码构建得到，并不需要同时开发两套代码。</p>
+<p>Vue.js 视图层渲染由 Render 方法完成，同时在内存中维护着一份虚拟 DOM，mpVue 无需使用 Vue.js 完成视图层渲染，因此我们改造了 Render 方法，禁止视图层渲染。熟悉源代码的读者都知道 Vue RunTime 有多个平台的实现，除了我们常见的 Web 平台，还有 Weex。从现在开始，我们增加了新的平台 mpVue。</p>
+<p>再看第三个问题，生命周期和数据同步是 mpVue 框架的灵魂，Vue.js 和小程序的数据彼此隔离，各自有不同的更新机制。mpVue 从生命周期和事件回调函数切入，在 Vue.js 触发数据更新时实现数据同步。小程序通过视图层呈现给用户、通过事件响应用户交互，Vue.js 在后台维护着数据变更和逻辑。可以看到，数据更新发端于小程序，处理自 Vue.js，Vue.js 数据变更后再同步到小程序。为实现数据同步，mpVue 修改了 Vue.js RunTime 实现，在 Vue.js 的生命周期中增加了更新小程序数据的逻辑。</p>
+<p>而用户交互触发的数据更新则是通过事件代理机制完成。在 Vue.js 代码中，事件响应函数对应到组件的 method 方法，Vue.js 自动维护了上下文环境。然而在小程序中并没有类似的机制，又因为 Vue.js 执行环境中维护着一份实时的虚拟 DOM，这与小程序的视图层完全对应。我们思考，在小程序组件节点上触发事件后，只要找到虚拟 DOM 上对应的节点，触发对应的事件不就完成了么。Vue.js 事件响应如果触发了数据更新，其生命周期函数更新将自动触发，在此函数上同步更新小程序数据，数据同步就实现了。</p>
+<p>mpVue 如何使用<br>mpVue 框架本身由多个 npm 模块构成，入口模块已经处理好依赖关系，开发者只需要执行如下代码即可完成本地项目创建。</p>
+<h1 id="安装-vue-cli"><a href="#安装-vue-cli" class="headerlink" title="安装 vue-cli"></a>安装 vue-cli</h1><p>$ npm install –global vue-cli</p>
+<h1 id="根据模板项目创建本地项目，目前为内网地址，暂稳开放"><a href="#根据模板项目创建本地项目，目前为内网地址，暂稳开放" class="headerlink" title="根据模板项目创建本地项目，目前为内网地址，暂稳开放"></a>根据模板项目创建本地项目，目前为内网地址，暂稳开放</h1><p>$ vue init ‘bitbucket:xxx.meituan.com:hfe/mpvue-quickstart’ –clone my-project</p>
+<h1 id="安装依赖和启动自动构建"><a href="#安装依赖和启动自动构建" class="headerlink" title="安装依赖和启动自动构建"></a>安装依赖和启动自动构建</h1><p>$ cd my-project<br>$ npm install<br>$ npm run dev</p>
+<p>执行完上述命令，在当前项目的 dist 子目录将构建出小程序目标代码，使用小程序开发者工具载入 dist 目录即可启动本地调试和预览。</p>
+<p>示例项目遵循 Vue.js 模板项目规范，通过 Vue.js 命令行工具 vue-cli 创建。代码组织形式与 Vue.js 官方实例保持一致，我们为小程序定制了 Vue.js RunTime 和 Webpack 加载器，此部分依赖也已经内置到项目中。</p>
+<p>针对小程序开发中常见的两类代码复用场景，mpVue 框架为开发者提供了解决思路和技术支持，开发者只需要在此指导下进行项目配置和改造。</p>
+<p>将小程序转换为 H5<br>直接使用 Vue.js 规范开发小程序，代码本身与 H5 并无不同，具体代码差异会集中在平台 API 部分。此外无需明显改动，改造主要分以下几个部分：</p>
+<p>将小程序平台的 Vue.js 框架替换为标准 Vue.js；<br>将小程序平台的 Vue-loader 加载器替换为标准 Vue-loader；<br>适配和改造小程序与 H5 的底层 API 差异。<br>将 H5 转换为小程序<br>已经使用 Vue.js 开发完 H5，则需要完成以下事宜：</p>
+<p>将标准 Vue.js 替换为小程序平台的 Vue.js 框架；<br>将标准 Vue-loader 加载器替换为小程序平台的 Vue-loader；<br>适配和改造小程序与 H5 的底层 API 差异。<br>根据小程序开发平台提供的能力，我们最大程度地支持了 Vue.js 语法特性，但部分功能现阶段暂时尚未实现，具体见表 1。<br><img src="/2018/03/10/mpVue-完整体验用Vue-js开发小程序/mpvueth.jpg" alt="mpVue暂不支持的语法特性"><br>mpVue 框架的目标是将小程序和 H5 的开发方式通过 Vue.js 建立关联，达到最大程度的代码复用。但由于平台差异的客观存在（主要集中在实现机制、底层 API 能力差异），我们无法做到代码 100%复用，平台差异部分的改造成本无法避免。对于代码复用的场景，开发者需要重点思考如下问题并做好准备：</p>
+<p>尽量使用平台无的语法特性，这部分特性无需转换和适配成本；<br>避免使用不支持的语法特性，譬如 slot、filter 等，降低改造成本；<br>如果使用特定平台 API，考虑抽象好适配层接口，通过切换底层实现完成平台转换。<br>mpVue 最佳实践<br>在表 2 中，我们对微信小程序、mpVue、WePY 这三个开发框架的主要能力和特点做了横向对比，帮助大家了解不同框架的侧重点，结合业务场景和开发习惯，确定技术方案。对于如何更好地使用 mpVue 进行小程序开发，我们总结了一些最佳实践。<br><img src="/2018/03/10/mpVue-完整体验用Vue-js开发小程序/mpvuefo.jpg" alt="框架主要能力及特性对比"><br>使用 vue-cli 命令行工具创建项目，使用 Vue 2.x 的语法规范进行开发；<br>避免使用不框架不支持的语法特性，即有部分 Vue.js 语法在小程序中无法使用，尽量 mpVue 和 Vue.js 共有特性；<br>合理设计数据模型，对数据的更新和操作做到细粒度控制，避免性能问题；<br>合理使用组件化开发小程序，提高代码复用。<br>结语<br>mpVue 框架已经在业务项目中得到实践和验证，目前开发文档也已经就绪，正在做开源前的最后准备，希望能够为小程序和 Vue.js 生态贡献一份力量。mpVue 的初衷是希望让 Vue.js 的开发者以低成本接入小程序开发，其能力和使用体验还有待进一步的检验。我们未来会继续扩展现有功能、解决用户的问题和需求、优化开发体验、完善周边生态建设，以帮助到更多的开发者。</p>
+<p>需要说明一下，mpVue 是通过 fork Vue.js 源码进行二次开发，新增加了 mp 平台的 Vue.js 实现，我们保留了跟随 Vue.js 版本升级的能力，希望未来能够实现更好的能力增强，最后感谢 Vue.js 框架和微信小程序对业界带来的便利。</p>
+<p>重要：转载自 <a href="http://blog.csdn.net/csdnnews/article/details/78252848" target="_blank" rel="noopener">http://blog.csdn.net/csdnnews/article/details/78252848</a> ！！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/技术思维/" rel="tag"># 技术思维</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/10/小程序手记n-four/" rel="next" title="小程序手记n-four">
+                <i class="fa fa-chevron-left"></i> 小程序手记n-four
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="Gary" />
+            
+              <p class="site-author-name" itemprop="name">Gary</p>
+              <p class="site-description motion-element" itemprop="description">About me! You know nothing!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-vue-cli"><span class="nav-number">1.</span> <span class="nav-text">安装 vue-cli</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#根据模板项目创建本地项目，目前为内网地址，暂稳开放"><span class="nav-number">2.</span> <span class="nav-text">根据模板项目创建本地项目，目前为内网地址，暂稳开放</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装依赖和启动自动构建"><span class="nav-number">3.</span> <span class="nav-text">安装依赖和启动自动构建</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gary</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
