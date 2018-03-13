@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Gary Blog">
 <meta property="og:description" content="对于模板template： &amp;lt;template / &amp;gt;其实是占位符，他执行之后会消失，不会被打印，所以一些响应操作不能写在里边(前端编码构建页面时：先静后动，先样式再数据) 部件在脱离文档流后经典居中方案：.XXXX {  position: absolute;  left: 50%;  margin-left: -51rpx;  top: 180rpx;} 关于生命周期函数–监听页面">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T14:19:31.307Z">
+<meta property="og:updated_time" content="2018-03-13T13:56:56.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小程序手记n-four">
 <meta name="twitter:description" content="对于模板template： &amp;lt;template / &amp;gt;其实是占位符，他执行之后会消失，不会被打印，所以一些响应操作不能写在里边(前端编码构建页面时：先静后动，先样式再数据) 部件在脱离文档流后经典居中方案：.XXXX {  position: absolute;  left: 50%;  margin-left: -51rpx;  top: 180rpx;} 关于生命周期函数–监听页面">
@@ -323,6 +323,10 @@
 <p>同步方法调用一旦开始，调用者必须等到方法调用返回后，才能继续后续的行为。<br>异步方法调用更像一个消息传递，一旦开始，方法调用就会立即返回，调用者就可以继续后续的操作。而，异步方法通常会在另外一个线程中，“真实”地执行着。整个过程，不会阻碍调用者的工作。</p>
 <p>同步的缺陷是如果在这里执行不了，整个流程就会就此卡住，后面的代码走不了，会非常耗时；而在小程序中能用同步尽量用同步。</p>
 <p>音乐播放：<br>wx.playBackgroundAudio(OBJECT)  使用后台播放器播放音乐，对于微信客户端来说，只能同时有一个后台音乐在播放。当用户离开小程序后，音乐将暂停播放；当用户点击“显示在聊天顶部”时，音乐不会暂停播放；当用户在其他小程序占用了音乐播放器，原有小程序内的音乐将停止播放。<br>wx.pauseBackgroundAudio()<br>暂停播放音乐。</p>
+<p>乐播放在小程序上有个特点，你播放后如果跳转到另一个页面，音乐是不会被关闭的，（除非主动调用stop属性），其在页面会有一个总控开关。</p>
+<p>音乐播放涉及的音乐源文件及封面图片都是不可以通过放在本地在调用来实现的，因为要控制体积（10M以下），都要采用网络链接的格式</p>
+<p>因为音乐涉及版权问题，所以像qq音乐，网易云的外链都有保护措施，通常做法是用爬虫程序来获取MP3源，但是这个对于小白却不友好，当然大家也可以去尝试通过爬虫获取，这里也交给大家一个简单的步骤—<a href="http://up.mcyt.net/" target="_blank" rel="noopener">http://up.mcyt.net/</a> 这个是可以提供可供使用外链的网站，但是资源不会那么全，有可能找不到想要的曲目，但是也能解燃眉之急。</p>
+<p>互联网时代，程序，APP，网站，所有的都是为了抢占资源争夺市场，不要怕有BUG，不要怕不完美，先做出来无障碍运行，然后在慢慢改进，举列子：网易的荒野行动，在腾讯未祭出刺激战场与全军出击之前市场资源抢占了有80%靠上！</p>
 
       
     </div>
@@ -437,7 +441,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

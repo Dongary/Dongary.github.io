@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="技术思维," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Gary Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="前言 腾讯一面，相比阿里一面来说，腾讯一面先给打电话预定时间，这也给了我们这些面试者去准备的时间。但是也正是因为这种确定性，也有在等待电话的时候的心情的忐忑。 背景 我是一名大三学生，大一在学校acm集训队，后来转向学习java，又去开发Android，在期间，学会怎么去解决一些编程遇到的问题以及灵活运用github。在大二寒假的时候，开始接触学习前端，如今已经一年了，一开始是做百度前端技术学院(">
+<meta name="keywords" content="技术思维">
+<meta property="og:type" content="article">
+<meta property="og:title" content="腾讯前端一面总结">
+<meta property="og:url" content="http://yoursite.com/2018/03/13/腾讯前端一面总结/index.html">
+<meta property="og:site_name" content="Gary Blog">
+<meta property="og:description" content="前言 腾讯一面，相比阿里一面来说，腾讯一面先给打电话预定时间，这也给了我们这些面试者去准备的时间。但是也正是因为这种确定性，也有在等待电话的时候的心情的忐忑。 背景 我是一名大三学生，大一在学校acm集训队，后来转向学习java，又去开发Android，在期间，学会怎么去解决一些编程遇到的问题以及灵活运用github。在大二寒假的时候，开始接触学习前端，如今已经一年了，一开始是做百度前端技术学院(">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/03/13/腾讯前端一面总结/js事件流.jpg">
+<meta property="og:updated_time" content="2018-03-13T14:03:47.029Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="腾讯前端一面总结">
+<meta name="twitter:description" content="前言 腾讯一面，相比阿里一面来说，腾讯一面先给打电话预定时间，这也给了我们这些面试者去准备的时间。但是也正是因为这种确定性，也有在等待电话的时候的心情的忐忑。 背景 我是一名大三学生，大一在学校acm集训队，后来转向学习java，又去开发Android，在期间，学会怎么去解决一些编程遇到的问题以及灵活运用github。在大二寒假的时候，开始接触学习前端，如今已经一年了，一开始是做百度前端技术学院(">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/13/腾讯前端一面总结/js事件流.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/13/腾讯前端一面总结/"/>
+
+
+
+
+
+  <title>腾讯前端一面总结 | Gary Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Gary Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/13/腾讯前端一面总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gary">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gary Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">腾讯前端一面总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-13T21:55:04+08:00">
+                2018-03-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前言</p>
+<p>腾讯一面，相比阿里一面来说，腾讯一面先给打电话预定时间，这也给了我们这些面试者去准备的时间。但是也正是因为这种确定性，也有在等待电话的时候的心情的忐忑。</p>
+<p>背景</p>
+<p>我是一名大三学生，大一在学校acm集训队，后来转向学习java，又去开发Android，在期间，学会怎么去解决一些编程遇到的问题以及灵活运用github。在大二寒假的时候，开始接触学习前端，如今已经一年了，一开始是做百度前端技术学院(<a href="http://ife.baidu.com/2016/task/all)的任务，学习了html和css，以及参考别人优秀的代码。" target="_blank" rel="noopener">http://ife.baidu.com/2016/task/all)的任务，学习了html和css，以及参考别人优秀的代码。</a></p>
+<p>js是通过红宝石，js高级教程第三版开始入门学习的，这本书里面的基础知识很精髓，那时候我也很有耐心的去看完了，虽然说可能实践还是跟不上理论，因为后面做的项目基本都是用框架去做项目，而导致对于基础知识的实践比较少。</p>
+<p>接下来，我们进入正题吧。</p>
+<p>腾讯一面</p>
+<p>首先，接到电话的时候，由于之前心情的忐忑，情绪还是有点兴奋的，以期待的口气向面试官问好，面试官也问问好之后就开始进入面试题了。</p>
+<p>【你先简短的介绍一下自己】<br>在这里，我就简短的介绍了自己的学校专业，应聘的岗位，以及是怎么走向学习前端的道路，也就和我写的背景差不多。</p>
+<p>【你是怎么学习前端的？】<br>开放性问题，我就回答了，一开始是在百度前端技术学院，后来看js高级教程第三版，接下来就是做项目，接触一些框架，然后，就开始学习框架，以及个人对于框架的一些看法。</p>
+<p>这里面试官很好，也跟我讨论了一下学习的好不好，以及学习js基础的话，不单单要看红宝石（js高级教程第三版），也要看看js的犀牛书（js权威指南）比较好一点。</p>
+<p>【有了解js的数据类型吗？说一说】<br>ES5的基本数据类型，Undefined，Null，Number，String，Boolean，引用类型，Object。ES6新增了数据类型Symbol，表示独一无二的值。</p>
+<p>【有了解js的事件吗？】<br>在这里，我不清楚是js的事件流还是js的事件方法，经过再次询问之后，是叫我讲述一下js的事件流。然后我就着这个图回答了一遍。<br><img src="/2018/03/13/腾讯前端一面总结/js事件流.jpg" alt="js事件流"></p>
+<p>一个完整的JS事件流是从window开始，最后回到window的一个过程。</p>
+<p>事件流被分为三个阶段(1~ 5)捕获过程、(5~ 6)事件触发过程、(6~ 10)冒泡过程。</p>
+<p>【移动端的触摸事件有了解不？】<br>在这里，我回答说我之前的项目经验基本都是PC端的所以不了解，但是面试官建议我去了解一下，毕竟基础知识一定要扎实，才会在前端的路上走的更远。所以，我就红宝石了解了一下，这里也介绍给大家吧。</p>
+<p>触摸事件指的是指的是用户将手指放在屏幕上，在屏幕上滑动到将手指从屏幕移开触发的事件，具体来说，有以下触摸事件的产生：</p>
+<p>touchstart: 当手指触摸屏幕时候触发；<br>touchmove: 当手指在屏幕上滑动的时候连续触发；可以调用阻止默认事件preventDefault()阻止屏幕滚动；<br>touchend: 手指离开屏幕时触发；<br>touchcancel: 系统停止跟踪触摸时触发；<br>以上的这些时间都会冒泡，而且都可以取消冒泡，而且，对于以上事件也提供了和鼠标事件中常用的属性：bubble,cancelable,view,clientX,clientY,screenX,screenY,detail,altKey,shiftKey,ctrKey和metaKey。</p>
+<p>除了上面这些属性外，触摸事件还提供了下面这些属性：</p>
+<p>touches: 跟踪返回Touch对象的数组；<br>targetTouchs: 特定事件目标的Touch对象的数组；<br>changeTouchs: 上次触摸以来改变了的Touch对象的数组；<br>每个Touch对象包含一下的属性：</p>
+<p>clientX: 触摸目标在浏览器中的x坐标<br>clientY: 触摸目标在浏览器中的y坐标<br>identifier: 标识触摸的唯一ID。<br>pageX: 触摸目标在当前DOM中的x坐标<br>pageY: 触摸目标在当前DOM中的y坐标<br>screenX: 触摸目标在屏幕中的x坐标<br>screenY: 触摸目标在屏幕中的y坐标<br>target: 触摸的DOM节点目标。<br>具体的例子，大家可以再在网上搜索一下。我就不带大家敲了。</p>
+<p>【说一下页面加载过程，就是输入url到加载出页面】<br>这里发生了：</p>
+<p>输入地址<br>浏览器查找域名的 IP 地址<br>这一步包括 DNS 具体的查找过程，包括：浏览器缓存-&gt;系统缓存-&gt;路由器缓存…<br>浏览器向 web 服务器发送一个 HTTP 请求<br>服务器的永久重定向响应（从 <a href="http://example.com" target="_blank" rel="noopener">http://example.com</a> 到 <a href="http://www.example.com）" target="_blank" rel="noopener">http://www.example.com）</a><br>浏览器跟踪重定向地址<br>服务器处理请求<br>服务器返回一个 HTTP 响应<br>浏览器显示 HTML<br>浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等）<br>浏览器发送异步请求<br>这里腾讯面试官还问了我对状态码的了解，并问了一个304状态码的意思，大家想了解可以自行百度一下咯。</p>
+<p>【说一下路由器的缓存】<br>因为上面回答了缓存，路由器的缓存，由于本人学习计网也久忘了，就老实回答面试官不清楚，面试官也建议再去了解了解。这里我了解了，也给大家分享一下吧。</p>
+<p>通俗点说，每个路由器根据所在网络的不同，都有自己的路由表，在工作时会选择相应的路径。为什么要有路由器缓存呢，这个也是为了发送数据，因为路由器最高层一般都是网络层，网络层一般都是传送数据包，数据包又是经过应用层向下传送之后送来的一部分文件数据，如果我们没有缓存的话，那么，每次都会查找传送到达方的ip地址就会很费力。</p>
+<p>【做项目中有遇到跨域吗？跨域的原理是什么？】<br>这里，我就老实回答有了，因为如果真的做过项目的话，确实会遇到跨域一般。但是我一般是用vue做项目，然后解决跨域又是用webpack里面配置的poxyTable进行解决跨域，相当于用代理工具，然后面试官又问了问我代理是怎么样有了解原理吗，以及跨域的原理，以及浏览器跨域的原因。</p>
+<p>那这里我就简单解说一下跨域的原理吧.</p>
+<p>首先，什么是跨域？跨域就是它是由浏览器的同源策略造成的，是浏览器施加的安全限制。</p>
+<p>所谓同源是指，域名，协议，端口均相同，不明白可以看看下面的例子：</p>
+<p><a href="http://www.123.com/index.html" target="_blank" rel="noopener">http://www.123.com/index.html</a> 调用 <a href="http://www.123.com/server.php" target="_blank" rel="noopener">http://www.123.com/server.php</a> （非跨域）</p>
+<p><a href="http://www.123.com/index.html" target="_blank" rel="noopener">http://www.123.com/index.html</a> 调用 <a href="http://www.456.com/server.php" target="_blank" rel="noopener">http://www.456.com/server.php</a> （主域名不同:123/456，跨域）</p>
+<p><a href="http://abc.123.com/index.html" target="_blank" rel="noopener">http://abc.123.com/index.html</a> 调用 <a href="http://def.123.com/server.php" target="_blank" rel="noopener">http://def.123.com/server.php</a> （子域名不同:abc/def，跨域）</p>
+<p><a href="http://www.123.com:8080/index.html" target="_blank" rel="noopener">http://www.123.com:8080/index.html</a> 调用 <a href="http://www.123.com:8081/server.php" target="_blank" rel="noopener">http://www.123.com:8081/server.php</a> （端口不同:8080/8081，跨域）</p>
+<p><a href="http://www.123.com/index.html" target="_blank" rel="noopener">http://www.123.com/index.html</a> 调用 <a href="https://www.123.com/server.php" target="_blank" rel="noopener">https://www.123.com/server.php</a> （协议不同:http/https，跨域）</p>
+<p>为什么要实现跨域？防止CSRF攻击，我看了一篇文章关于CSRF的还不错，大家有兴趣也可以看看这篇文章(<a href="http://blog.csdn.net/stpeace/article/details/53512283" target="_blank" rel="noopener">http://blog.csdn.net/stpeace/article/details/53512283</a>)</p>
+<p>【你是怎么解决跨域的？说说Cors解决的方法，和你用的jsonp的解决的原理】</p>
+<p>我回复面试官，我是用jsonp解决跨域的，然后面试官叫我说明一下jsonp跨域的原理，等我说完之后，面试官又跟我说了一下其实Cors方法更好，大家如果想理解可以看看阮一峰的跨域资源共享CORS详解(<a href="http://www.ruanyifeng.com/blog/2016/04/cors.html)和而对于jsonp跨域的工作原理，网上有很多，我就不举例子了，我建议可以直接在github上面看看源代码(https://github.com/webmodules/jsonp)就可以理解。" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/04/cors.html)和而对于jsonp跨域的工作原理，网上有很多，我就不举例子了，我建议可以直接在github上面看看源代码(https://github.com/webmodules/jsonp)就可以理解。</a></p>
+<p>【有了解作用域吗？怎么预防作用域污染】<br>其实网上有很多作用域的文章，参差不齐，个人觉得的话，作用域无非就是js当做对于function函数声明会提升到其他声明语句前执行，以及对于某个 {}里面的作用域如果找不到某个属性，就会在该 {}上下文当中查找属性，如果还找不到的话，进而类似。</p>
+<p>作用域污染，无非就是闭包了吧，个人理解。</p>
+<p>【说说闭包】<br>网上关于闭包的说明实在是太多，但是很多又讲的不明不白的，标题党太多，这里我建议还是直接看看js高级教程第三版里面的书本吧。</p>
+<p>其实闭包也就是指有权访问另一个函数作用域的函数而已。常用的创建闭包的方法就是在函数内部创建另一个函数。</p>
+<p>function<br> a(){</p>
+<p>var<br> a;</p>
+<p>// …</p>
+<p>return</p>
+<p>function<br>(){</p>
+<p>// 这里可以引用a函数里面的作用域，也就是可以使用a</p>
+<p>// 而且a函数作用域无法使用这里的值。<br>    }<br>}<br>【了解前端的缓存吗？缓存分为几类？】<br>前端的缓存无非就Cookie,LocalStorge,SessionStorge这三个吧。</p>
+<p>个人就简单的介绍一下这三个吧，更详细可以自己去百度百度一下。</p>
+<p>Cookie，存储容量小，仅仅4kb左右，在网络请求的时候可以发送，不建议存储重要数据，因为会被网络诈骗就是把本地的cookie发到别人的服务器上，进而获取你的账户密码。</p>
+<p>LocalStorge,SessionStorge都是本地缓存的主要用的，两者的用法都很简单，都有各自的Set和get方法。主要的区别就是LocalStorge是一种持久化的存储方式，也就是说如果不手动清除，数据就永远不会过期。而SessionStorge关闭浏览器就清空数据。</p>
+<p>【怎么才算一个好的前端开发者】<br>这里的话，其实我的回答大家可能不是很在乎哈哈，就不说了，大家根据自己的理解去回答就好了。</p>
+<p>【你还有什么问题想问吗】<br>这个问题，其实我想到了，因为我看过鹅厂wo谈会，在那里其实我就知道可能会问这个问题，而我也问了我想知道的答案，就是面试官对于我之前的回答给一个评价。</p>
+<p>我碰到的面试官很好，他给我的评价说了很久，不管怎么说有机会和这些大牛聊聊天真的是知识层面又上升了吧。面试官给我的总结就是，基础知识可以再多去学习，不用太着急学习框架，市面上的框架千变万化，只有基础知识比较好才能够学习的更好，而且需要多学习一下性能优化，网络，安全这方面，因为在大公司里面，其实重要的东西并不是你能够做的多好看，而是你的安全性那些做的好不好，一不小心信息泄露了，那就会导致很多无法想象的事情，（这里我特建议大家看看图解http协议吧，链接：<a href="https://pan.baidu.com/s/1CvttJuNetZvgVjrXG1ZFSA" target="_blank" rel="noopener">https://pan.baidu.com/s/1CvttJuNetZvgVjrXG1ZFSA</a> 密码：u35q）</p>
+<p>然后，建议我就是基础知识学更多一些，把知识都规范体系化，这样以后碰到问题了就会一下子就知道是哪方面的问题，直接去解决。这里面试官给我从以下几个方面进行说明，我也真的是收获颇多。</p>
+<p>js基础<br>计算机网络<br>性能优化<br>开发技巧<br>移动端知识<br>安全性问题</p>
+<p>原文作者：广工小成<br><a href="https://segmentfault.com/a/1190000013654696" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013654696</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/技术思维/" rel="tag"># 技术思维</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/12/CSS经典布局/" rel="next" title="CSS经典布局">
+                <i class="fa fa-chevron-left"></i> CSS经典布局
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="Gary" />
+            
+              <p class="site-author-name" itemprop="name">Gary</p>
+              <p class="site-description motion-element" itemprop="description">About me! You know nothing!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gary</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
