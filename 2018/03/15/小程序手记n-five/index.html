@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="Gary Blog" type="application/atom+xml" />
 
@@ -81,18 +83,18 @@
 
 
 
-<meta name="description" content="对于模板template： &amp;lt;template / &amp;gt;其实是占位符，他执行之后会消失，不会被打印，所以一些响应操作不能写在里边(前端编码构建页面时：先静后动，先样式再数据) 部件在脱离文档流后经典居中方案：.XXXX {  position: absolute;  left: 50%;  margin-left: -51rpx;  top: 180rpx;} 关于生命周期函数–监听页面">
+<meta name="description" content="接小程序手记n-four target和CurrentTarget的区别：target指的是当前点击事件，而CurrentTarget指的是事件被捕获的组件当需要获得某传参时你要确定这个值是在当前点击事件里还是在事件被捕获的组件里！ 跳转到一个带tap选项卡的页面，必须使用wx.switchTab的方法。不需要tap的话还是用redirect和navigate方法。 相对于手动添加文件夹以及文件夹">
 <meta name="keywords" content="技术思维">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小程序手记n-four">
-<meta property="og:url" content="http://yoursite.com/2018/03/10/小程序手记n-four/index.html">
+<meta property="og:title" content="小程序手记n-five">
+<meta property="og:url" content="http://yoursite.com/2018/03/15/小程序手记n-five/index.html">
 <meta property="og:site_name" content="Gary Blog">
-<meta property="og:description" content="对于模板template： &amp;lt;template / &amp;gt;其实是占位符，他执行之后会消失，不会被打印，所以一些响应操作不能写在里边(前端编码构建页面时：先静后动，先样式再数据) 部件在脱离文档流后经典居中方案：.XXXX {  position: absolute;  left: 50%;  margin-left: -51rpx;  top: 180rpx;} 关于生命周期函数–监听页面">
+<meta property="og:description" content="接小程序手记n-four target和CurrentTarget的区别：target指的是当前点击事件，而CurrentTarget指的是事件被捕获的组件当需要获得某传参时你要确定这个值是在当前点击事件里还是在事件被捕获的组件里！ 跳转到一个带tap选项卡的页面，必须使用wx.switchTab的方法。不需要tap的话还是用redirect和navigate方法。 相对于手动添加文件夹以及文件夹">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-13T13:56:56.356Z">
+<meta property="og:updated_time" content="2018-03-16T07:00:47.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小程序手记n-four">
-<meta name="twitter:description" content="对于模板template： &amp;lt;template / &amp;gt;其实是占位符，他执行之后会消失，不会被打印，所以一些响应操作不能写在里边(前端编码构建页面时：先静后动，先样式再数据) 部件在脱离文档流后经典居中方案：.XXXX {  position: absolute;  left: 50%;  margin-left: -51rpx;  top: 180rpx;} 关于生命周期函数–监听页面">
+<meta name="twitter:title" content="小程序手记n-five">
+<meta name="twitter:description" content="接小程序手记n-four target和CurrentTarget的区别：target指的是当前点击事件，而CurrentTarget指的是事件被捕获的组件当需要获得某传参时你要确定这个值是在当前点击事件里还是在事件被捕获的组件里！ 跳转到一个带tap选项卡的页面，必须使用wx.switchTab的方法。不需要tap的话还是用redirect和navigate方法。 相对于手动添加文件夹以及文件夹">
 
 
 
@@ -122,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/10/小程序手记n-four/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/15/小程序手记n-five/"/>
 
 
 
 
 
-  <title>小程序手记n-four | Gary Blog</title>
+  <title>小程序手记n-five | Gary Blog</title>
   
 
 
@@ -245,7 +247,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/10/小程序手记n-four/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/小程序手记n-five/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gary">
@@ -262,7 +264,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">小程序手记n-four</h1>
+          <h1 class="post-title" itemprop="name headline">小程序手记n-five</h1>
         
 
         <div class="post-meta">
@@ -274,8 +276,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-10T15:06:00+08:00">
-                2018-03-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T22:29:04+08:00">
+                2018-03-15
               </time>
             
 
@@ -312,21 +314,32 @@
       
 
       
-        <p>对于模板template： &lt;template / &gt;其实是占位符，他执行之后会消失，不会被打印，所以一些响应操作不能写在里边<br>(前端编码构建页面时：先静后动，先样式再数据)</p>
-<p>部件在脱离文档流后经典居中方案：<br>.XXXX {<br>  position: absolute;<br>  left: 50%;<br>  margin-left: -51rpx;<br>  top: 180rpx;<br>}</p>
-<p>关于生命周期函数–监听页面加载：onLoad<br>一般会给一个参数options,这个参数里包含着从其他页面获取的值（前提有获取操作）。</p>
-<p>对于一些用户操作过数据，并且在用户下次登陆时能直观查看其状态，这就涉及数据缓存。<br>获取缓存 wx.getStorge (key)<br>删除缓存 wx.removeStorge (key)<br>清除所有缓存 wx.clearStorge ( )<br>设置缓存 wx.setStorge (key,value)<br>以上每个步骤都分为同步与异步 StorageSync 和 Storge<br>需要注意的是:在小程序里如果用户不主动清除缓存则其会永久存在，且体积不能超过10M</p>
-<p>在js语句里去引用data里的参数时参数名一定要加上this.data 列：this.data.参数名</p>
-<p>界面的交互反馈：<br>wx.showToast(OBJECT)  显示消息提示框<br>wx.hideToast()        隐藏消息提示框<br>wx.showLoading(OBJECT)  显示 loading 提示框, 需主动调用 wx.hideLoading 才能关闭提示框<br>wx.hideLoading()  隐藏 loading 提示框<br>wx.showModal(OBJECT)  显示模态弹窗<br>wx.showActionSheet(OBJECT)  显示操作菜单</p>
-<p>JS经典错误：<br>深入理解this，this指的是函数调用的上下文环境，如果在自定义嵌套函数中使用this指针，像this.setData（{}）写法就不正确了，因为setData是属于Page（{}）中的data的。解决办法就是：在第一层自定义函数中的将this赋值给一个制定变量–var a = this，然后在嵌套函数中用a去引用this，即a.setData({})</p>
-<p>同步和异步通常用来形容一次方法调用。</p>
-<p>同步方法调用一旦开始，调用者必须等到方法调用返回后，才能继续后续的行为。<br>异步方法调用更像一个消息传递，一旦开始，方法调用就会立即返回，调用者就可以继续后续的操作。而，异步方法通常会在另外一个线程中，“真实”地执行着。整个过程，不会阻碍调用者的工作。</p>
-<p>同步的缺陷是如果在这里执行不了，整个流程就会就此卡住，后面的代码走不了，会非常耗时；而在小程序中能用同步尽量用同步。</p>
-<p>音乐播放：<br>wx.playBackgroundAudio(OBJECT)  使用后台播放器播放音乐，对于微信客户端来说，只能同时有一个后台音乐在播放。当用户离开小程序后，音乐将暂停播放；当用户点击“显示在聊天顶部”时，音乐不会暂停播放；当用户在其他小程序占用了音乐播放器，原有小程序内的音乐将停止播放。<br>wx.pauseBackgroundAudio()<br>暂停播放音乐。</p>
-<p>乐播放在小程序上有个特点，你播放后如果跳转到另一个页面，音乐是不会被关闭的，（除非主动调用stop属性），其在页面会有一个总控开关。</p>
-<p>音乐播放涉及的音乐源文件及封面图片都是不可以通过放在本地在调用来实现的，因为要控制体积（10M以下），都要采用网络链接的格式</p>
-<p>因为音乐涉及版权问题，所以像qq音乐，网易云的外链都有保护措施，通常做法是用爬虫程序来获取MP3源，但是这个对于小白却不友好，当然大家也可以去尝试通过爬虫获取，这里也交给大家一个简单的步骤—<a href="http://up.mcyt.net/" target="_blank" rel="noopener">http://up.mcyt.net/</a> 这个是可以提供可供使用外链的网站，但是资源不会那么全，有可能找不到想要的曲目，但是也能解燃眉之急。</p>
-<p>互联网时代，程序，APP，网站，所有的都是为了抢占资源争夺市场，不要怕有BUG，不要怕不完美，先做出来无障碍运行，然后在慢慢改进，举列子：网易的荒野行动，在腾讯未祭出刺激战场与全军出击之前市场资源抢占了有80%靠上！</p>
+        <p>接小程序手记n-four</p>
+<p>target和CurrentTarget的区别：<br>target指的是当前点击事件，而CurrentTarget指的是事件被捕获的组件<br>当需要获得某传参时你要确定这个值是在当前点击事件里还是在事件被捕获的组件里！</p>
+<p>跳转到一个带tap选项卡的页面，必须使用wx.switchTab的方法。不需要tap的话还是用redirect和navigate方法。</p>
+<p>相对于手动添加文件夹以及文件夹里的相关文件，有一种更简便的方法，就是在app.json的pages对象就是页面文件路径里直接增加对应的文件夹和文件名的路径，点击保存后会自动生成.</p>
+<p>要灵活运动template模板组件，增加复用性，减少代码量</p>
+<p>而在小程序里能不能用好这个模板也就决定着你学习小程序的好坏</p>
+<p>flex 盒子模型，能较为方便的实现页面的整体大概布局，</p>
+<p>在弹性布局里：如果用justify-content：space-between 属性后，，子元素的vertical-align: middle;就会失效！（float也会失效）</p>
+<p>小程序里发起网络请求的方法是 wx.request<br>(而服务器网络接口常用的是RESFUL和SOAP，SOAP现在是有少部分企业级在使用，大多数都在使用RESFUL；而RESFUL api的URL是可以自描述的，就是见名知意；而且接口粒度合适；国内外优秀的知名RESFUL api：微博，豆瓣，github)其中豆瓣已经屏蔽小程序对其API的访问，但是我们可以从代理API上获取数据<a href="http://t.yushu.im" target="_blank" rel="noopener">http://t.yushu.im</a></p>
+<p>在这里不得不提http错误状态码：<br>一些常见的状态码为：</p>
+<p>200 - 服务器成功返回网页<br>404 - 请求的网页不存在<br>503 - 服务不可用<br>详细分解：</p>
+<p>1xx- 临时响应 表示临时响应并需要请求者继续执行操作的状态代码。<br>代码 说明<br>100 -继续 请求者应当继续提出请求。服务器返回此代码表示已收到请求的第一部分，正在等待其余部分。<br>101 -切换协议 请求者已要求服务器切换协议，服务器已确认并准备切换。</p>
+<p>2xx-成功 表示成功处理了请求的状态代码。</p>
+<p>代码 说明<br>200 -成功 服务器已成功处理了请求。通常，这表示服务器提供了请求的网页。<br>201 -已创建 请求成功并且服务器创建了新的资源。<br>202 -已接受 服务器已接受请求，但尚未处理。<br>203 -非授权信息 服务器已成功处理了请求，但返回的信息可能来自另一来源。<br>204 -无内容 服务器成功处理了请求，但没有返回任何内容。<br>205 -重置内容 服务器成功处理了请求，但没有返回任何内容。<br>206 -部分内容 服务器成功处理了部分 GET 请求。</p>
+<p>3xx -重定向<br>表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</p>
+<p>代码 说明<br>300 -多种选择 针对请求，服务器可执行多种操作。服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。<br>301 -永久移动 请求的网页已永久移动到新位置。服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置。<br>302 -临时移动 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。<br>303 -查看其他位置 请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。<br>304 -未修改 自从上次请求后，请求的网页未修改过。服务器返回此响应时，不会返回网页内容。<br>305 -使用代理 请求者只能使用代理访问请求的网页。如果服务器返回此响应，还表示请求者应使用代理。<br>307 -临时重定向 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
+<p>4xx -请求错误 这些状态代码表示请求可能出错，妨碍了服务器的处理。</p>
+<p>代码 说明<br>400 -错误请求 服务器不理解请求的语法。<br>401 -未授权 请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。<br>403 -禁止 服务器拒绝请求。<br>404 -未找到 服务器找不到请求的网页。<br>405 -方法禁用 禁用请求中指定的方法。<br>406 -不接受 无法使用请求的内容特性响应请求的网页。<br>407 -需要代理授权 此状态代码与 401（未授权）类似，但指定请求者应当授权使用代理。<br>408 -请求超时 服务器等候请求时发生超时。<br>409 -冲突 服务器在完成请求时发生冲突。服务器必须在响应中包含有关冲突的信息。<br>410 -已删除 如果请求的资源已永久删除，服务器就会返回此响应。<br>411 -需要有效长度 服务器不接受不含有效内容长度标头字段的请求。<br>412 -未满足前提条件 服务器未满足请求者在请求中设置的其中一个前提条件。<br>413 -请求实体过大 服务器无法处理请求，因为请求实体过大，超出服务器的处理能力。<br>414 -请求的 URI 过长 请求的 URI通常为网址过长，服务器无法处理。<br>415 -不支持的媒体类型 请求的格式不受请求页面的支持。<br>416 -请求范围不符合要求 如果页面无法提供请求的范围，则服务器会返回此状态代码。<br>417 -未满足期望值 服务器未满足”期望”请求标头字段的要求。</p>
+<p>5xx-服务器错误<br>这些状态代码表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。</p>
+<p>代码 说明<br>500 -服务器内部错误 服务器遇到错误，无法完成请求。<br>501 -尚未实施 服务器不具备完成请求的功能。例如，服务器无法识别请求方法时可能会返回此代码。<br>502 -错误网关 服务器作为网关或代理，从上游服务器收到无效响应。<br>503 -服务不可用 服务器目前无法使用（由于超载或停机维护）。通常，这只是暂时状态。<br>504 -网关超时 服务器作为网关或代理，但是没有及时从上游服务器收到请求。<br>505 -HTTP 版本不受支持 服务器不支持请求中所用的 HTTP 协议版本。</p>
+<p>HttpWatch状态码Result is</p>
+<p>200 - 服务器成功返回网页，客户端请求已成功。<br>302 - 对象临时移动。服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。<br>304 - 属于重定向。自上次请求后，请求的网页未修改过。服务器返回此响应时，不会返回网页内容。<br>401 - 未授权。请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。<br>404 - 未找到。服务器找不到请求的网页。<br>2xx - 成功。表示服务器成功地接受了客户端请求。<br>3xx - 重定向。表示要完成请求，需要进一步操作。客户端浏览器必须采取更多操作来实现请求。例如，浏览器可能不得不请求服务器上的不同的页面，或通过代理服务器重复该请求。<br>4xx - 请求错误。这些状态代码表示请求可能出错，妨碍了服务器的处理。<br>5xx - 服务器错误。表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。</p>
+<p>在调用服务器数据的时候：异步调用没办法确定数据加载完的先后顺序</p>
+<p>对于template模板编写，自下而上从子元素到父元素；而在绑定数据（传入）的时候要自上而下从父元素到子元素。对于API传递的数据，不要直接拿取使用，而应统一提取出来。经过处理再进行使用。</p>
+<p>处理API数据的思路：<br>第一步：定义一个空数组；<br>第二步：用for in 来遍历获取数据的数组<br>第三步：在循环中，把所需要的属性值赋值给一个临时对象<br>第四步：还是在循环中，用push方法，把临时对象加到空数组中。</p>
+<p>重要！！数据绑定中的…xxx意思是在某模板内展开xxx对象,</p>
 
       
     </div>
@@ -357,8 +370,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/08/小程序手记n-three/" rel="next" title="小程序手记n-three">
-                <i class="fa fa-chevron-left"></i> 小程序手记n-three
+              <a href="/2018/03/15/从输入URL到页面加载的过程/" rel="next" title="从输入URL到页面加载的过程">
+                <i class="fa fa-chevron-left"></i> 从输入URL到页面加载的过程
               </a>
             
           </div>
@@ -366,10 +379,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/10/mpVue-完整体验用Vue-js开发小程序/" rel="prev" title="mpVue--完整体验用Vue.js开发小程序">
-                mpVue--完整体验用Vue.js开发小程序 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
