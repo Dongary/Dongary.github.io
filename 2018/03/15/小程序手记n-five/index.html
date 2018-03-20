@@ -73,8 +73,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="Gary Blog" type="application/atom+xml" />
 
@@ -91,10 +89,12 @@
 <meta property="og:site_name" content="Gary Blog">
 <meta property="og:description" content="接小程序手记n-four target和CurrentTarget的区别：target指的是当前点击事件，而CurrentTarget指的是事件被捕获的组件当需要获得某传参时你要确定这个值是在当前点击事件里还是在事件被捕获的组件里！ 跳转到一个带tap选项卡的页面，必须使用wx.switchTab的方法。不需要tap的话还是用redirect和navigate方法。 相对于手动添加文件夹以及文件夹">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T07:00:47.389Z">
+<meta property="og:image" content="http://yoursite.com/2018/03/15/小程序手记n-five/数据绑定.png">
+<meta property="og:updated_time" content="2018-03-19T16:02:11.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小程序手记n-five">
 <meta name="twitter:description" content="接小程序手记n-four target和CurrentTarget的区别：target指的是当前点击事件，而CurrentTarget指的是事件被捕获的组件当需要获得某传参时你要确定这个值是在当前点击事件里还是在事件被捕获的组件里！ 跳转到一个带tap选项卡的页面，必须使用wx.switchTab的方法。不需要tap的话还是用redirect和navigate方法。 相对于手动添加文件夹以及文件夹">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/15/小程序手记n-five/数据绑定.png">
 
 
 
@@ -340,6 +340,8 @@
 <p>对于template模板编写，自下而上从子元素到父元素；而在绑定数据（传入）的时候要自上而下从父元素到子元素。对于API传递的数据，不要直接拿取使用，而应统一提取出来。经过处理再进行使用。</p>
 <p>处理API数据的思路：<br>第一步：定义一个空数组；<br>第二步：用for in 来遍历获取数据的数组<br>第三步：在循环中，把所需要的属性值赋值给一个临时对象<br>第四步：还是在循环中，用push方法，把临时对象加到空数组中。</p>
 <p>重要！！数据绑定中的…xxx意思是在某模板内展开xxx对象,</p>
+<p>数据绑定的两种方式有不同意义： 如图</p>
+<p><img src="/2018/03/15/小程序手记n-five/数据绑定.png" alt="数据绑定"></p>
 
       
     </div>
@@ -379,6 +381,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/19/小程序手记n-six/" rel="prev" title="小程序手记n-six">
+                小程序手记n-six <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -450,7 +456,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
