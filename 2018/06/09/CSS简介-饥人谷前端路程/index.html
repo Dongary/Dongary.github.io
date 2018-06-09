@@ -94,7 +94,9 @@
 <meta property="og:image" content="http://yoursite.com/2018/06/09/CSS简介-饥人谷前端路程/1.png">
 <meta property="og:image" content="http://yoursite.com/2018/06/09/CSS简介-饥人谷前端路程/2.png">
 <meta property="og:image" content="http://yoursite.com/2018/06/09/CSS简介-饥人谷前端路程/3.png">
-<meta property="og:updated_time" content="2018-06-09T16:03:01.046Z">
+<meta property="og:image" content="http://yoursite.com/2018/06/09/CSS简介-饥人谷前端路程/4.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/09/CSS简介-饥人谷前端路程/5.png">
+<meta property="og:updated_time" content="2018-06-09T16:46:42.393Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS简介-饥人谷前端路程">
 <meta name="twitter:description" content="1.认识CSS样式CSS全称为“层叠样式表 (Cascading Style Sheets)”，它主要是用于定义HTML内容在浏览器内的显示样式，如文字大小、颜色、字体加粗等。使用CSS样式的一个好处是通过定义某个样式，可以让不同网页位置的文字有着统一的字体、字号或者颜色等。 2.CSS代码语法css 样式由选择符和声明组成，而声明又由属性和值组成选择符：又称选择器，指明网页中要应用样式规则的元素">
@@ -320,14 +322,29 @@
       
         <p>1.认识CSS样式<br>CSS全称为“层叠样式表 (Cascading Style Sheets)”，它主要是用于定义HTML内容在浏览器内的显示样式，如文字大小、颜色、字体加粗等。<br>使用CSS样式的一个好处是通过定义某个样式，可以让不同网页位置的文字有着统一的字体、字号或者颜色等。<br><img src="/2018/06/09/CSS简介-饥人谷前端路程/1.png" alt="1"></p>
 <p>2.CSS代码语法<br>css 样式由选择符和声明组成，而声明又由属性和值组成<br>选择符：又称选择器，指明网页中要应用样式规则的元素，如本例中是网页中所有的段（p）的文字将变成蓝色，而其他的元素（如ol）不会受到影响。<br>声明：在英文大括号“｛｝”中的的就是声明，属性和值之间用英文冒号“：”分隔。当有多条声明时，中间可以英文分号“;”分隔，如下所示：<br>注意：<br>a、最后一条声明可以没有分号，但是为了以后修改方便，一般也加上分号。<br>b、为了使用样式更加容易阅读，可以将每条代码写在一个新行内，如下所示：</p>
-<p>3.CSS 样式<br>CSS 样式代码插入的形式来看基本可以分为以下4种：内联式,嵌入式,外部式和导入式4种。<br>1.内联式：css样式表就是把css代码直接写在现有的HTML标签中，如下面代码：<br><img src="/2018/06/09/CSS简介-饥人谷前端路程/2.png" alt="2"><br>2.嵌入式css样式，就是可以把css样式代码写在head标签里的<style type="text/css"></style>标签之间。<br><img src="/2018/06/09/CSS简介-饥人谷前端路程/3.png" alt="3"><br>3.外部式css样式(也可称为外联式)就是把css代码写一个单独的外部文件中，这个css样式文件以“.css<br>”为扩展名，在<head>内（不是在<style>标签内）使用<link>标签将css样式文件链接到HTML文件内，如下面代码：<br><img src="CSS简介-饥人谷前端路程/4.png" alt="4"></p>
+<p>3.CSS 样式<br>CSS 样式代码插入的形式来看基本可以分为以下4种：内联式,嵌入式,外部式和导入式4种。<br>1.内联式：css样式表就是把css代码直接写在现有的HTML标签中，如下面代码：<br><img src="/2018/06/09/CSS简介-饥人谷前端路程/2.png" alt="2"><br>2.嵌入式css样式，就是可以把css样式代码写在head标签里的style标签之间。<br><img src="/2018/06/09/CSS简介-饥人谷前端路程/3.png" alt="3"><br>3.外部式css样式(也可称为外联式)就是把css代码写一个单独的外部文件中，这个css样式文件以“.css”为扩展名，在head 内（不是在 style 标签内）使用 link 标签将css样式文件链接到HTML文件内，如下面代码：<br><img src="/2018/06/09/CSS简介-饥人谷前端路程/4.png" alt="4"></p>
 <p>4.导入样式和链接样式比较相似，采用@import样式导入CSS样式表，在HTML初始化时，会被导入到HTML或者CSS文件中，成为文件的一部分，类似第二种内嵌样式。</p>
-<p>在html中使用，如下：<br><img src="CSS简介-饥人谷前端路程/5.png" alt="5"><br>在CSS中使用，如下：</p>
+<p>在html中使用，如下：<br><img src="/2018/06/09/CSS简介-饥人谷前端路程/5.png" alt="5"><br>在CSS中使用，如下：</p>
 <p>@import url(style.css);</p>
 <p>注意：<br>a、css样式文件名称以有意义的英文字母命名，如 main.css。</p>
 <p>b、rel=”stylesheet” type=”text/css” 是固定写法不可修改。</p>
-<p>c、<link>标签位置一般写在<head>标签之内。</p>
-<p>这四种样式是有优先级的，记住他们的优先级：内联式 &gt; 嵌入式 &gt; 外部式 &gt; 导入式<br>但是嵌入式&gt;外部式有一个前提：嵌入式css样式的位置一定在外部式的后面。如右代码编辑器就是这样，<link href="style.css" ...>代码在<style type="text/css">…</style>代码的前面（实际开发中也是这么写的）。感兴趣的小伙伴可以试一下，把它们调换顺序，再看他们的优先级是否变化。<br>其实总结来说，就是–就近原则（离被设置元素越近优先级别越高），但注意上面所总结的优先级是有一个前提：内联式、嵌入式、外部式样式表中css样式是在的相同权值的情况下。</head></p>
+<p>c、 link 标签位置一般写在 head 标签之内。</p>
+<p>这四种样式是有优先级的，记住他们的优先级：内联式 &gt; 嵌入式 &gt; 外部式 &gt; 导入式<br>其实总结来说，就是–就近原则（离被设置元素越近优先级别越高），但注意上面所总结的优先级是有一个前提：内联式、嵌入式、外部式样式表中css样式是在的相同权值的情况下。</p>
+<p>课堂笔记：<br>谷歌浏览器默认字体大小为16px </p>
+<p>当子元素是行级元素的时候，子元素加上padding时父元素的渲染高度还会处于原始大小并没有被撑起来，解决办法将子元素变成块级元素即可。</p>
+<p>在写代码的时候并排的两个元素之间如果有换行或者空几行都会被浏览器压缩成一个空格，如果不想要这个空格就要把两个元素写在一起</p>
+<p>将一行内的两个元素中线对齐时，只需将两个元素的渲染高度保持一致（前提是两者的处于同一水平上，可以通过设置背景颜色来区分）</p>
+<p>1：高度是由什么决定的  答：由其内部文档流元素的高度总和决定，而文档流意思是文档内元素的流动方向，分一下两部分<br>内联元素从左往右流动，如果流动遇到阻碍（边界）会换行继续流动;<br>块级元素从上往下流动;<br>（额外：span标签里边中文和英文在遇阻流动的区别，中文可以被截，而英文不会，解决办法：css word-break:break-all）<br>布局的时候尽量用float,不要用display；display是在float之后出现的。<br>难点–span标签的高度是由什么决定的：是由内部文字样式的推荐高度决定的，每种字体的推荐高度都不一样，是你设置字体大小的倍数。span本身是不接受宽高的。</p>
+<p>避免的容易出错点：不要轻易给固定的高度宽度。<br>2：line-box 是啥     每一行称为一条Line Box，它又是由这一行的许多inline-box组成，它的高度可以直接由line-height决定，line boxes的高度垂直堆叠形成了containing box的高度，就是我们见到的div或是p标签之类的高度了。</p>
+<p>3：宽度是有什么决定的   内部文档流元素的宽度总和决定</p>
+<p>4：position 的 5 个取值<br>a、static（静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。</p>
+<p>b、relative（相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　　</p>
+<p>c、absolute（绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。可通过z-index进行层次分级。</p>
+<p>d、fixed（固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。可通过z-index进行层次分级。</p>
+<p>额外—我们知道如果使用position:absolute和position:fixed都会导致元素脱离文档流，怎么解决这种问题：<br>解决方法1：在js中设置父元素高度等于子元素的高度。</p>
+<p>解决方法2：给父元素强行设置高度。（对于宽度导致的类似问题就强行设置宽度）</p>
+<p>5：z-index  　<br>首先声明：z-index只能在position属性值为relative或absolute或fixed的元素上有效。<br>基本原理是：z-index的值可以控制定位元素在垂直于显示屏幕方向（z轴）上的堆叠顺序(stack order),值大的元素发生重叠时会在值小的元素上面。</p>
+<p>用css画的各种形状的网站：css-tricks<br>6：盒子模型<br>盒子模型分为两种，IE盒子模型和W3C盒子模型（W3C盒子模型也就是W3C的标准）。<br>这两个模型的唯一区别是计算width和height时，IE盒子模型包含padding和border, W3C盒子模型则不包括。<br>为了使页面在不同浏览器下呈现相同的效果，必须统一盒子模型，因为设置width或者height一般是必须用到–CSS3里面有新的属性。<br>box-sizing: content-box（W3C）<br>box-sizing: border-box（IE）</p>
 
       
     </div>
