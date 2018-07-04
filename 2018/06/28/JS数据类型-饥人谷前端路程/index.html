@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="JavaScript 语言的每一个值，都属于某一种数据类型。而JavaScript 的数据类型，目前共有七种。 数值（number）：整数和小数（比如1和3.14）字符串（string）：文本（比如Hello World）。布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假）undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值null">
+<meta name="description" content="JavaScript 语言的每一个值，都属于某一种数据类型。而JavaScript 的数据类型，目前共有七种。 数值（number）：整数和小数（比如1和3.14）字符串（string）：文本（比如Hello World）。将不同类型的值变为字符串，使用toString方法的话，只有数值，布尔支持；为了支持更多的类型转换也可以用值加一个空字符串去变化。布尔值（boolean）：表示真伪的两个特殊值">
 <meta name="keywords" content="修仙问道">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS数据类型-饥人谷前端路程">
 <meta property="og:url" content="http://yoursite.com/2018/06/28/JS数据类型-饥人谷前端路程/index.html">
 <meta property="og:site_name" content="Gary Blog">
-<meta property="og:description" content="JavaScript 语言的每一个值，都属于某一种数据类型。而JavaScript 的数据类型，目前共有七种。 数值（number）：整数和小数（比如1和3.14）字符串（string）：文本（比如Hello World）。布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假）undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值null">
+<meta property="og:description" content="JavaScript 语言的每一个值，都属于某一种数据类型。而JavaScript 的数据类型，目前共有七种。 数值（number）：整数和小数（比如1和3.14）字符串（string）：文本（比如Hello World）。将不同类型的值变为字符串，使用toString方法的话，只有数值，布尔支持；为了支持更多的类型转换也可以用值加一个空字符串去变化。布尔值（boolean）：表示真伪的两个特殊值">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-28T15:46:25.170Z">
+<meta property="og:updated_time" content="2018-07-04T13:36:29.154Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS数据类型-饥人谷前端路程">
-<meta name="twitter:description" content="JavaScript 语言的每一个值，都属于某一种数据类型。而JavaScript 的数据类型，目前共有七种。 数值（number）：整数和小数（比如1和3.14）字符串（string）：文本（比如Hello World）。布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假）undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值null">
+<meta name="twitter:description" content="JavaScript 语言的每一个值，都属于某一种数据类型。而JavaScript 的数据类型，目前共有七种。 数值（number）：整数和小数（比如1和3.14）字符串（string）：文本（比如Hello World）。将不同类型的值变为字符串，使用toString方法的话，只有数值，布尔支持；为了支持更多的类型转换也可以用值加一个空字符串去变化。布尔值（boolean）：表示真伪的两个特殊值">
 
 
 
@@ -315,7 +315,7 @@
 
       
         <p>JavaScript 语言的每一个值，都属于某一种数据类型。<br>而JavaScript 的数据类型，目前共有七种。</p>
-<p>数值（number）：整数和小数（比如1和3.14）<br>字符串（string）：文本（比如Hello World）。<br>布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假）<br>undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值<br>null：表示空值，即此处的值为空。<br>对象（object）：各种值组成的集合。—这个也是其中类型中最为复杂的。<br>（ES6 新增的第七种 Symbol 类型的值）</p>
+<p>数值（number）：整数和小数（比如1和3.14）<br>字符串（string）：文本（比如Hello World）。将不同类型的值变为字符串，使用toString方法的话，只有数值，布尔支持；为了支持更多的类型转换也可以用值加一个空字符串去变化。<br>布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假）<br>undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值<br>null：表示空值，即此处的值为空。<br>对象（object）：各种值组成的集合。—这个也是其中类型中最为复杂的。<br>（ES6 新增的第七种 Symbol 类型的值）</p>
 <p>而判断一个值到底是什么类型我们常用 typeof 运算符<br>列：typeof 123 // “number”<br>特殊之处（bug）:1,用typeof去判断null的时候却显示object.<br>               2,用typeof去判断一个函数的时候却显示function没有显示object.</p>
 <p>1.Number类型<br>Number类型包含整数和浮点数（浮点数数值必须包含一个小数点，且小数点后面至少有一位数字）两种值。</p>
 <p>NaN:非数字类型。特点：① 涉及到的 任何关于NaN的操作，都会返回NaN   ② NaN不等于自身。</p>
@@ -323,11 +323,14 @@
 <p>isNaN(123)  //false   isNaN(“hello”)  //true</p>
 <p>2.String类型<br>字符串有length属性。</p>
 <p>字符串转换：转型函数String(),适用于任何数据类型（null,undefined 转换后为null和undefined）；toString()方法（null,defined没有toString()方法）。</p>
-<p>3.Boolean类型<br>该类型只有两个值，true和false<br>布尔值往往用于程序流程的控制</p>
+<p>3.Boolean类型<br>该类型只有两个值，true和false<br>布尔值往往用于程序流程的控制<br>其他类型值转为布尔值，每个（symbol除外）类型值内都存在一两个转为布尔是false的特殊值：<br>字符串： “”;<br>数值： 0  NaN；<br>null<br>undefined<br>除了这些特殊值外其他的转化布尔是都是true。</p>
 <p>4.Undefined类型<br>表示未定义，其只有一个值，即undefined值。使用var声明了变量，但未给变量初始化值，那么这个变量的值就是undefined。</p>
 <p>5.Null类型<br>null类型被看做空对象指针，前文说到null类型也是空的对象引用。<br>（在if语句中，undefined和null都会被自动转为false）</p>
 <p>(以上五中被称为值类型，第六中被称为引用类型)</p>
-<p>6.Object类型<br>js中对象是一组属性与方法的集合。这里就要说到引用类型了，引用类型是一种数据结构，用于将数据和功能组织在一起。引用类型有时候也被称为对象定义，因为它们描述的是一类对象所具有的属性和方法。<br>object下分三大引用类型：<br>1  object自己，我们看到的大多数类型值都是Object类型的实例<br>   创建Object实例的方式有两种。<br>   第一种是使用new操作符后跟Object构造函数，如下所示<br>   //var person = new Object()<br>   person.name = “Micheal”<br>   person.age = 24<br>   第二种方式是使用对象字面量表示法，如下所示<br>   //var person = {<br>　　name : “Micheal”,<br>　　age : 24<br>   }<br>2  Array类型<br>    数组的每一项可以用来保存任何类型的数据，也就是说，可以用数组的第一个位置来保存字符串，第二个位置保存数值，第三个位置保存对象….另外，数组的大小是可以动态调整的。<br>    创建数组的基本方式有两种<br>    第一种是使用Array构造函数，如下所示<br>    //var colors = new Array(“red”,”blue”,”yellow”)<br>    第二种是使用数组字面量表示法，如下所示<br>    //var colors = [“red”,”blue”,”yellow”];<br>3  Function类型<br>   每个函数都是Function类型的实例，而且都与其他引用类型一样具有属性和方法。函数通常是使用函数声明语法定义的，如下所示<br>   //function sum(num1,num2){<br>　　return num1 + num2;<br>    };<br>   这和使用函数表达式定义函数的方式相差无几。<br>   //var sun = function (){<br>　　return sum1 + sum2;<br>   };</p>
+<p>6.Object类型<br>js中对象是一组属性与方法的集合。这里就要说到引用类型了，引用类型是一种数据结构，用于将数据和功能组织在一起。引用类型有时候也被称为对象定义，因为它们描述的是一类对象所具有的属性和方法。<br>object下分三大引用类型：<br>1  object自己，我们看到的大多数类型值都是Object类型的实例<br>   创建Object实例的方式有两种。<br>   第一种是使用new操作符后跟Object构造函数，如下所示<br>   //var person = new Object()<br>   person.name = “Micheal”<br>   person.age = 24<br>   第二种方式是使用对象字面量表示法，如下所示<br>   //var person = {<br>　　name : “Micheal”,<br>　　age : 24<br>   }<br>2  Array类型<br>    数组的每一项可以用来保存任何类型的数据，也就是说，可以用数组的第一个位置来保存字符串，第二个位置保存数值，第三个位置保存对象….另外，数组的大小是可以动态调整的。<br>    创建数组的基本方式有两种<br>    第一种是使用Array构造函数，如下所示<br>    //var colors = new Array(“red”,”blue”,”yellow”)<br>    第二种是使用数组字面量表示法，如下所示<br>    //var colors = [“red”,”blue”,”yellow”];<br>3  Function类型<br>   每个函数都是Function类型的实例，而且都与其他引用类型一样具有属性和方法。函数通常是使用函数声明语法定义的，如下所示<br>   //function sum(num1,num2){<br>　　return num1 + num2;<br>    };<br>   这和使用函数表达式定义函数的方式相差无几。<br>   //var sun = function (){<br>　　return sum1 + sum2;<br>   };<br>   基本类型和引用类型的区别：<br>   基本类型的数据都存储在栈内存中；<br>   引用类型数据存储在堆内存中，但是不可以直接访问内存空间中的位置和操作堆内存空间<br>   只能通过操作对象的在栈内存中的引用地址。所以引用类型的数据，在栈内存中保存的实际是对象在对内存中<br>   的引用地址。通过这个引用地址来快速查找保存在堆内存中的对象；</p>
+<p>   额外：<br>   垃圾回收：如果一个对象没有被引用它就会垃圾，将被回收。（也就是堆内存里出现的对象没有人引用它）<br>   回收是要浪费cpu资源的</p>
+<p>   js中 +运算符，在实际运行的时候如果两边的值类型不同，该符号总会尝试将两者变成相同的类型值（优先是变成字符串，比如两边一个字符串一个数值的时候会把数值变为字符串）；</p>
+<p>   浏览器在执行代码时确认变量的话是先看左边再看右边，具体运算时才是从右到左；</p>
 
       
     </div>
