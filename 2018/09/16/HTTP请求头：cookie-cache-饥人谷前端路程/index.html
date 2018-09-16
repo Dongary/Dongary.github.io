@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="随笔," />
+  <meta name="keywords" content="修仙问道," />
 
 
 
@@ -81,18 +81,20 @@
 
 
 
-<meta name="description" content="炸了，因为电脑出问题文件全部清空，导致博客只能重做，崩溃啊。。">
-<meta name="keywords" content="随笔">
+<meta name="description" content="我们已了解过简单的http过程，下面就来详细了解http请求头中极为重要的两个东西 参考上节代码，在谷歌浏览器上我们按下F12键，点击network，随便打开一个网站（比如百度）点击其网址，并view source来看一体请求头中的内容。 cache-control 缓存 是可以让页面加载速度变快的机制，列：服务器可以通过在回复头中设置 response.setHeader(‘Cache-Cont">
+<meta name="keywords" content="修仙问道">
 <meta property="og:type" content="article">
-<meta property="og:title" content="炸了">
-<meta property="og:url" content="http://yoursite.com/2018/03/05/回到起点/index.html">
+<meta property="og:title" content="HTTP请求头：cookie cache-饥人谷前端路程">
+<meta property="og:url" content="http://yoursite.com/2018/09/16/HTTP请求头：cookie-cache-饥人谷前端路程/index.html">
 <meta property="og:site_name" content="Gary Blog">
-<meta property="og:description" content="炸了，因为电脑出问题文件全部清空，导致博客只能重做，崩溃啊。。">
+<meta property="og:description" content="我们已了解过简单的http过程，下面就来详细了解http请求头中极为重要的两个东西 参考上节代码，在谷歌浏览器上我们按下F12键，点击network，随便打开一个网站（比如百度）点击其网址，并view source来看一体请求头中的内容。 cache-control 缓存 是可以让页面加载速度变快的机制，列：服务器可以通过在回复头中设置 response.setHeader(‘Cache-Cont">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-06T03:40:16.813Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/16/HTTP请求头：cookie-cache-饥人谷前端路程/1.png">
+<meta property="og:updated_time" content="2018-09-16T16:35:09.877Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="炸了">
-<meta name="twitter:description" content="炸了，因为电脑出问题文件全部清空，导致博客只能重做，崩溃啊。。">
+<meta name="twitter:title" content="HTTP请求头：cookie cache-饥人谷前端路程">
+<meta name="twitter:description" content="我们已了解过简单的http过程，下面就来详细了解http请求头中极为重要的两个东西 参考上节代码，在谷歌浏览器上我们按下F12键，点击network，随便打开一个网站（比如百度）点击其网址，并view source来看一体请求头中的内容。 cache-control 缓存 是可以让页面加载速度变快的机制，列：服务器可以通过在回复头中设置 response.setHeader(‘Cache-Cont">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/16/HTTP请求头：cookie-cache-饥人谷前端路程/1.png">
 
 
 
@@ -122,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/05/回到起点/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/16/HTTP请求头：cookie-cache-饥人谷前端路程/"/>
 
 
 
 
 
-  <title>炸了 | Gary Blog</title>
+  <title>HTTP请求头：cookie cache-饥人谷前端路程 | Gary Blog</title>
   
 
 
@@ -245,7 +247,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/05/回到起点/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/16/HTTP请求头：cookie-cache-饥人谷前端路程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gary">
@@ -262,7 +264,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">炸了</h1>
+          <h1 class="post-title" itemprop="name headline">HTTP请求头：cookie cache-饥人谷前端路程</h1>
         
 
         <div class="post-meta">
@@ -274,8 +276,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T12:53:54+08:00">
-                2018-03-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-16T22:19:19+08:00">
+                2018-09-16
               </time>
             
 
@@ -312,7 +314,25 @@
       
 
       
-        <p>炸了，因为电脑出问题文件全部清空，导致博客只能重做，崩溃啊。。</p>
+        <p>我们已了解过简单的http过程，下面就来详细了解http请求头中极为重要的两个东西</p>
+<p>参考上节代码，在谷歌浏览器上我们按下F12键，点击network，随便打开一个网站（比如百度）点击其网址，<br>并view source来看一体请求头中的内容。<br><img src="/2018/09/16/HTTP请求头：cookie-cache-饥人谷前端路程/1.png" alt="1"></p>
+<p>cache-control 缓存 是可以让页面加载速度变快的机制，<br>列：服务器可以通过在回复头中设置 response.setHeader(‘Cache-Control’, ‘max-age=30’) 数字是以秒为单位<br>带有这些内容的页面，这句话的意思就是这个页面在接下来30秒的时间里如果有重复请求的操作时，不在请求而是直接从缓存里读取这个页面文件<br>通常某个网站会设置较长的时间，以提高页面在重复请求时的加载时间，但是这样做的话页面更新改版的话，用户怎么访问的到，总不可能等10年吧！ 只要请求的URL有变化，那么就会重新请求，比如在原URL后跟一些查询参数。<br>缺点（占内存，当你访问的网站过多，缓存也就过多，占用的内存就过多；缓存不能再主页面设置）</p>
+<p>Cookie 是什么</p>
+<ol>
+<li>Cookie 是浏览器访问服务器A后，服务器传给浏览器的一段数据。</li>
+<li>浏览器需要保存这段数据，不得轻易删除。</li>
+<li>此后每次浏览器访问该服务器A，都必须带上这段数据。</li>
+</ol>
+<p>列：服务器在响应用户登录成功的时候，会设置cookie将加密的用户名和密码存入里边<br>Set-Cookie: &lt;cookie名&gt;=&lt;cookie值&gt;</p>
+<p>HTTP/1.0 200 OK<br>Content-type: text/html<br>Set-Cookie: yummy_cookie=choco<br>Set-Cookie: tasty_cookie=strawberry</p>
+<p>这个Cookie仅对于该服务器有效，就像景点门票和对应的景点一样；<br>如果下次浏览器访问同样的服务器</p>
+<p>GET /sample_page.html HTTP/1.1<br>Host: <a href="http://www.example.org" target="_blank" rel="noopener">www.example.org</a><br>Cookie: yummy_cookie=choco; tasty_cookie=strawberry</p>
+<p>就会把这个Cookie附加上，可以免密登录<br>Cookie 默认在用户关闭页面后就失效，后台代码可以任意设置 Cookie 的过期时间,<br>大小大概在 4kb ,<br>失效（如同门票过期），Cookie的过期时间、域、路径、有效期、适用站点都可以根据需要来指定。</p>
+<p>Cookie的作用第一个作用是识别用户身份。<br>            第二个作用是记录历史。<br>现实生活中的应用：<br>            会话状态管理（如用户登录状态、购物车、游戏分数或其它需要记录的信息）<br>            个性化设置（如用户自定义设置、主题等）<br>            浏览器行为跟踪（如跟踪分析用户行为等） </p>
+<p>需要提到的是Cookie是浏览器提供的，也就是说每个浏览器都有自己的Cookie，之间是不能通用的（换言之你在A浏览器登录上B网站，短时间内再A打开的话是不需要登录的，如果换C浏览器登录B的话，依然需要重新登录）<br>但是最初应用Cookie是有缺陷的，因为一旦我们把用户的信息直接存储在浏览器（客户端）的话，是能被随看见且会被随意篡改，为了防止这种隐私泄露，session机制解决了这个缺陷</p>
+<p>Session （是要与Cookie配合的）<br>将 SessionID（随机数）通过 Cookie 发给客户端<br>客户端访问服务器时，服务器读取 SessionID<br>服务器有一块内存（哈希表）保存了所有 session（列：用户在登录成功的时候会设置session，生成随机的SessionID对应用户的用户名密码等并将其存入session）<br>通过 SessionID 我们可以得到对应用户的隐私信息，如 id、email<br>这块内存（哈希表）就是服务器上的所有 session<br>（session的缺点就是，占内存，用户越多所分配的内存就越多；额外一点就是session也可以实现不基于Cookie实现）</p>
+<p>因为场景使用的增多，Cookie不能再满足所有的需求，H5推出了LocalStorage，SessionStorage<br>LocalStorage<br>LocalStorage 跟 HTTP 无关<br>HTTP 不会带上 LocalStorage 的值<br>只有相同域名的页面才能互相读取 LocalStorage（没有同源那么严格）<br>每个域名 localStorage 最大存储量为 5Mb 左右（每个浏览器不一样）<br>常用场景：记录有没有提示过用户（没有用的信息，不能记录密码）<br>LocalStorage 永久有效，除非用户清理缓存</p>
+<p>SessionStorage（会话存储）<br>SessionStorage 跟 HTTP 无关<br>HTTP 不会带上 SessionStorage 的值<br>只有相同域名的页面才能互相读取 SessionStorage（没有同源那么严格）<br>每个域名 SessionStorage 最大存储量为 5Mb 左右（每个浏览器不一样）<br>SessionStorage 在用户关闭页面（会话结束）后就失效。</p>
 
       
     </div>
@@ -330,7 +350,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随笔/" rel="tag"># 随笔</a>
+            <a href="/tags/修仙问道/" rel="tag"># 修仙问道</a>
           
         </div>
       
@@ -343,14 +363,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/09/16/jQuery使用感想-饥人谷前端路程/" rel="next" title="jQuery使用感想-饥人谷前端路程">
+                <i class="fa fa-chevron-left"></i> jQuery使用感想-饥人谷前端路程
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/05/道家思想与网页重构/" rel="prev" title="道家思想与网页重构">
-                道家思想与网页重构 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/16/AJAX-饥人谷前端路程/" rel="prev" title="AJAX-饥人谷前端路程">
+                AJAX-饥人谷前端路程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

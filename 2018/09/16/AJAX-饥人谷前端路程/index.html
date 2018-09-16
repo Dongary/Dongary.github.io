@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="修仙问道," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Gary Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="先说说起因Web的运作原理是一次HTTP请求对应一个页面，举例：这种原理对用户的体验是极不好的，有些数据应该是响应用户的操作，就是在用户操作之后才获取到进而呈现。 如果要让用户留在当前页面中，同时发出新的HTTP请求，就必须用JavaScript发送这个新请求，接收到数据后，再用JavaScript更新页面，这样一来，用户就感觉自己仍然停留在当前页面，但是数据却可以不断地更新。 早期的程序猿在不断">
+<meta name="keywords" content="修仙问道">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AJAX-饥人谷前端路程">
+<meta property="og:url" content="http://yoursite.com/2018/09/16/AJAX-饥人谷前端路程/index.html">
+<meta property="og:site_name" content="Gary Blog">
+<meta property="og:description" content="先说说起因Web的运作原理是一次HTTP请求对应一个页面，举例：这种原理对用户的体验是极不好的，有些数据应该是响应用户的操作，就是在用户操作之后才获取到进而呈现。 如果要让用户留在当前页面中，同时发出新的HTTP请求，就必须用JavaScript发送这个新请求，接收到数据后，再用JavaScript更新页面，这样一来，用户就感觉自己仍然停留在当前页面，但是数据却可以不断地更新。 早期的程序猿在不断">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/09/16/AJAX-饥人谷前端路程/1.png">
+<meta property="og:updated_time" content="2018-09-16T17:17:28.563Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AJAX-饥人谷前端路程">
+<meta name="twitter:description" content="先说说起因Web的运作原理是一次HTTP请求对应一个页面，举例：这种原理对用户的体验是极不好的，有些数据应该是响应用户的操作，就是在用户操作之后才获取到进而呈现。 如果要让用户留在当前页面中，同时发出新的HTTP请求，就必须用JavaScript发送这个新请求，接收到数据后，再用JavaScript更新页面，这样一来，用户就感觉自己仍然停留在当前页面，但是数据却可以不断地更新。 早期的程序猿在不断">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/16/AJAX-饥人谷前端路程/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/16/AJAX-饥人谷前端路程/"/>
+
+
+
+
+
+  <title>AJAX-饥人谷前端路程 | Gary Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Gary Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/16/AJAX-饥人谷前端路程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gary">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gary Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">AJAX-饥人谷前端路程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-16T22:29:29+08:00">
+                2018-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>先说说起因<br>Web的运作原理是一次HTTP请求对应一个页面，举例：这种原理对用户的体验是极不好的，有些数据应该是响应用户的操作，就是在用户操作之后才获取到进而呈现。</p>
+<p>如果要让用户留在当前页面中，同时发出新的HTTP请求，就必须用JavaScript发送这个新请求，接收到数据后，再用JavaScript更新页面，这样一来，用户就感觉自己仍然停留在当前页面，但是数据却可以不断地更新。</p>
+<p>早期的程序猿在不断的代码调试中发现以下5种样式都能发出http请求</p>
+<p>form 可以发请求，但是会刷新页面或新开页面<br>a 可以发 get 请求，但是也会刷新页面或新开页面<br>img 可以发 get 请求，但是只能以图片的形式展示<br>link 可以发 get 请求，但是只能以 CSS、favicon 的形式展示<br>script 可以发 get 请求，但是只能以脚本的形式运行</p>
+<p>但是这些都太局限，所以有没有什么方式可以实现get、post、put、delete的全部请求形式，而且想以什么形式展示就以什么形式展示，而且都没解决上述问题，为了解决这种困境：</p>
+<p>微软率先做了技术突破<br>IE 5 率先在 JS 中引入 ActiveX 对象（API），使得 JS 可以直接发起 HTTP 请求。随后 Mozilla、 Safari、 Opera 也跟进（抄袭）了，取名 XMLHttpRequest，并被纳入 W3C 规范。</p>
+<p>随后出现了以下的技术过程：<br>使用 XMLHttpRequest 发请求<br>服务器返回 XML 格式的字符串<br>JS 解析 XML，并更新局部页面 </p>
+<p>Jesse James Garrett 将上边的全部过程取名叫做 AJAX，也叫异步的 JavaScript 和 XML<br>（Asynchronous JavaScript and XML，意思就是用JavaScript执行异步网络请求）</p>
+<p>AJAX引擎允许用户与应用软件之间的交互过程异步进行，独立于用户与网络服务器间的交流。现在，可以用Javascript调用AJAX引擎来代替产生一个HTTP的用户动作，内存中的数据编辑、页面导航、数据校验这些不需要重新载入整个页面的需求可以交给AJAX来执行。</p>
+<p><img src="/2018/09/16/AJAX-饥人谷前端路程/1.png" alt="1"></p>
+<p>通过AJAX我们可以设置请求及获取响应的header部分中的内容<br>1，JS可以设置任意请求header<br>第一部分 request.open(‘get’, ‘/xxx’)<br>第二部分 request.setHeader(‘content-type’,’x-www-form-urlencoded’)<br>第四部分 request.send(‘a=1&amp;b=2’)<br>2，JS可以设置任意响应header<br>第一部分 request.status / request.statusText<br>第二部分 request.getResponseHeader() / request.getAllResponseHeaders()<br>第四部分 request.responseText</p>
+<p>JSON 是一种新的语言（一门抄袭js的语言），作为在浏览器和服务器通信过程中承载数据的介质。</p>
+<p>JS 和 JSON 的区别<br>undefined        没有<br>null             null<br>[‘a’,’b’]        [“a”,”b”]<br>function fn(){}  没有<br>{name:’frank’}   {“name”:”frank”}<br>‘frank’          “frank”<br>var a = {}        搞不定（没有变量）<br>{<strong>proto</strong>}       没有原型链</p>
+<p>JSON没有抄袭js中的function 和 undefined类型，（symbol类型是在AJAX抄袭之后出现的所以也没有）<br>JSON的字符串首尾必须是”<br>处理JSON的数据将其转化为浏览器可识别的数据<br>let XXX = request.responseText<br>let YYY = window.JSON.parse(XXX)</p>
+<p>JSON 和 JavaScript 的关系：  JSON 是一门抄袭/借鉴 JavaScript 的语言，同时也是一种数据交互格式，JSON 是 JavaScript 的子集（或者说 JSON 只抄袭了一部分 JavaScript 语法，而且没有新增任何原创的语法）</p>
+<p>JSON 和 JavaScript 的区别有哪些：JSON 不支持函数、undefined、变量、引用、单引号字符串、对象的key不支持单引号也不支持不加引号、没有内置的 Date、Math、RegExp 等，而 JavaScript 全都支持。</p>
+<p>AJAX有自己安全限制，这也是因为浏览器的同源策略导致的<br>只有 协议+端口+域名一模一样才允许AJAX请求，只要这其中任意一个不一样都不能发起请求</p>
+<p>在一些需求下，如何突破这种限制：（常用的）<br>one–JSONP，这种方式跨域实际上是利用了浏览器允许跨域引用JavaScript资源<br>请求方：xxx.com的前端（浏览器）<br>响应方：yyy.com的后端（服务器）</p>
+<p>1，请求方创建script, src指向响应方，同时传入一个查询参数（请求网址+?callbackName=yyy）<br>2，响应方接受查询参数后，根据其callbackName,构造形如：<br>                                          1 yyy.call(undefined,’你要的数据’)<br>                                          2 yyy(‘你要的数据’)<br>                                          –这样的响应<br>3，浏览器接收响应，就会执行yyy.call(undefined,’你要的数据’)<br>4，那么请求方就知道了他要的数据</p>
+<p>在实用中有两个约定：：</p>
+<ol>
+<li>callbackName -&gt; callback 写法固定</li>
+<li>yyy -&gt; 随机数，通常在字符后边接数字，为了避免函数名冲突</li>
+</ol>
+<p>js中的JSONP（跨域请求）是有些复杂的，但是通过jquery的话就特别简单：</p>
+<pre><code>$.ajax({
+   url:   &apos;getName.php&apos;,
+   type:  &apos;GET&apos;,
+   cache: false,
+   data:{
+         &apos;playerName&apos;:   encodeURIComponent(playerName)//解决问题的关键点
+   },
+   success:function(response){
+     ……
+   }
+   });
+</code></pre><p>提醒一点JSONP是通过动态创建script实现的，我们动态创建script时候只能用get没有办法用post；</p>
+<p>two–CORS<br>如果浏览器支持HTML5，那么就可以一劳永逸地使用新的跨域策略：CORS了。</p>
+<p>CORS全称Cross-Origin Resource Sharing，是HTML5规范定义的如何跨域访问资源。</p>
+<p>Origin表示本域，也就是浏览器当前页面的域。当JavaScript向外域（如sina.com）发起请求后，浏览器收到响应后，首先检查Access-Control-Allow-Origin是否包含本域，如果是，则此次跨域请求成功，如果不是，则请求失败，JavaScript将无法获取到响应的任何数据。</p>
+<p>具体方式就是在A网站请求头中设置(‘Origin’, ‘<a href="http://XXX.com:8001&#39;" target="_blank" rel="noopener">http://XXX.com:8001&#39;</a>)<br>所请求的B网站的响应头中设置XXXX.setHeader(‘Access-Control-Allow-Origin’, ‘<a href="http://XXX.com:8001&#39;" target="_blank" rel="noopener">http://XXX.com:8001&#39;</a>)<br>那么就实现A访问B，这就是跨域。</p>
+<p>扩展：readyState与status<br>XMLHttpRequest对象（Ajax）的状态码（readystate）</p>
+<p>当一个XMLHttpRequest初次创建时，这个属性的值是从0开始，知道接收完整的HTTP响应，这个值增加到4。有五种状态：</p>
+<p>状态0 (未初始化)： (XMLHttpRequest)对象已经创建或已被abort()方法重置，但还没有调用open()方法；</p>
+<p>状态1 (载入)：已经调用open() 方法，但是send()方法未调用，尚未发送请求；</p>
+<p>状态2 (载入完成)： send()方法已调用，HTTP请求已发送到web服务器，请求已经发送完成，未接收到响应；</p>
+<p>状态3 (交互)：所有响应头部都已经接收到。响应体开始接收但未完成，即可以接收到部分响应数据；</p>
+<p>状态4 (完成)：已经接收到了全部数据，并且连接已经关闭。</p>
+<p>readystate的值不会递减，除非当一个请求在处理过程中的时候调用了abort()或open()方法。每次这个属性的值增加的时候，都会触发onreadystatechange事件句柄。</p>
+<p>HTTP状态代码（status）</p>
+<p>status是由服务器返回的HTTP状态代码，实际是一种辅状态判断，只是status更多是服务器方的状态判断。当readystate小于3的时候读这一属性会导致一个异常。</p>
+<p>1xx—信息类：表示收到Web浏览器请求，正在进一步的处理中。</p>
+<p>100：客户必须继续发出请求；</p>
+<p>101：客户要求服务器根据请求转换HTTP协议版本。服务器转换协议。</p>
+<p>2xx—成功：表示用户请求被正确接收，理解和处理。</p>
+<p>200：OK；</p>
+<p>201：提示知道新文件的URL。请求被创建完成，同时新的资源被创建。</p>
+<p>202：共处理的请求已被接受，但是处理未完成。</p>
+<p>203：文档已经正常的返回，但一些应答头可能不正确，因为使用的是文档的拷贝。</p>
+<p>204：没有新文档。浏览器应该继续显示原来的文档。如果用户定期的刷新页面，而servlet可以确定用户文档足够新，这个状态代码是很有用的。</p>
+<p>205：没有新文档。但是浏览器应该重置它所显示的内容。用来强制浏览器清除表单输入内容。</p>
+<p>3xx—重定向：表示请求没有成功，客户必须采取进一步的动作。</p>
+<p>300：请求的资源可在多处得到。</p>
+<p>301：删除请求数据，所请求的页面已经转移至新的url。</p>
+<p>302：所请求的页面已经临时转移至新的url。</p>
+<p>303：所请求的页面可在别的url下被找到。</p>
+<p>4xx—客户端错误：表示客户端提交的请求有错误。</p>
+<p>404：NOT Found，意味着请求中所引用的文档不存在。</p>
+<p>401：被请求的页面需要用户名和密码。</p>
+<p>402：此代码尚无法使用。</p>
+<p>403：对被请求页面的访问被禁止。</p>
+<p>404：服务器无法找到被请求的页面。</p>
+<p>405：请求中指定的方法不被允许。</p>
+<p>406：服务器生成的响应无法被客户端所接受。</p>
+<p>407：用户必须首先使用代理服务器进行验证，这样请求才会被处理。</p>
+<p>408：请求超出了服务器的等待时间。</p>
+<p>409：由于冲突，请求无法被完成。</p>
+<p>410：被请求页面不可用。</p>
+<p>411：”Content-length“未被定义。如果无此内容，服务器不会接受请求。</p>
+<p>412：请求中的前提条件被服务器评估为失败。</p>
+<p>413：由于所请求的实体太大，服务器不会接受请求。</p>
+<p>414：由于url太长，服务器不会接受请求。当post请求被转换为带很长的查询信息的get请求时，就会发生414错误。</p>
+<p>415：由于媒介类型不被支持，服务器不会接受请求。</p>
+<p>416：服务器不能满足客户在请求中指定的Range头。</p>
+<p>5xx—服务器错误：表示服务器不能完成对请求的处理。</p>
+<p>500：服务器产生内部错误。请求未完成。服务器遇到不可预知的情况。</p>
+<p>501：请求未完成。服务器不支持所请求的功能。</p>
+<p>502：请求未完成。服务器从上游服务器收到一个无效的响应。</p>
+<p>503：请求未完成。服务器临时过载或当机。</p>
+<p>504，网关超时。</p>
+<p>505，服务器不支持请求中指明的HTTP协议版本。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/修仙问道/" rel="tag"># 修仙问道</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/16/HTTP请求头：cookie-cache-饥人谷前端路程/" rel="next" title="HTTP请求头：cookie cache-饥人谷前端路程">
+                <i class="fa fa-chevron-left"></i> HTTP请求头：cookie cache-饥人谷前端路程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/16/CANVAS-饥人谷前端路程/" rel="prev" title="CANVAS-饥人谷前端路程">
+                CANVAS-饥人谷前端路程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="Gary" />
+            
+              <p class="site-author-name" itemprop="name">Gary</p>
+              <p class="site-description motion-element" itemprop="description">About me! You know nothing!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gary</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
