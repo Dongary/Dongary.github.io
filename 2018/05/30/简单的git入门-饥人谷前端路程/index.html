@@ -74,8 +74,6 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Gary Blog" type="application/atom+xml" />
-
 
 
 
@@ -89,10 +87,13 @@
 <meta property="og:site_name" content="Gary Blog">
 <meta property="og:description" content="1：注册git（https://github.com/）2：进入 https://github.com/settings/keys3：如果页面里已经有一些 key，就点「delete」按钮把这些 key 全删掉。如果没有，就往下看4：点击 New SSH key，你需要输入 Title 和 Key，但是你现在没有 key，往下看5：打开 Git Bash6：复制并运行 rm -rf ~/.ssh/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-29T16:41:20.759Z">
+<meta property="og:image" content="http://yoursite.com/2018/05/30/简单的git入门-饥人谷前端路程/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/30/简单的git入门-饥人谷前端路程/2.png">
+<meta property="og:updated_time" content="2018-09-18T09:38:47.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单的git入门-饥人谷前端路程">
 <meta name="twitter:description" content="1：注册git（https://github.com/）2：进入 https://github.com/settings/keys3：如果页面里已经有一些 key，就点「delete」按钮把这些 key 全删掉。如果没有，就往下看4：点击 New SSH key，你需要输入 Title 和 Key，但是你现在没有 key，往下看5：打开 Git Bash6：复制并运行 rm -rf ~/.ssh/">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/30/简单的git入门-饥人谷前端路程/1.png">
 
 
 
@@ -312,12 +313,16 @@
       
 
       
-        <p>1：注册git（<a href="https://github.com/）" target="_blank" rel="noopener">https://github.com/）</a><br>2：进入 <a href="https://github.com/settings/keys" target="_blank" rel="noopener">https://github.com/settings/keys</a><br>3：如果页面里已经有一些 key，就点「delete」按钮把这些 key 全删掉。如果没有，就往下看<br>4：点击 New SSH key，你需要输入 Title 和 Key，但是你现在没有 key，往下看<br>5：打开 Git Bash<br>6：复制并运行 rm -rf ~/.ssh/* 把现有的 ssh key 都删掉，这句命令行如果你多打一个空格，可能就要重装系统了，建议复制运行。<br>7：运行 ssh-keygen -t rsa -b 4096 -C “你的邮箱”，注意填写你的邮箱！<br>8：按回车三次<br>9：运行 cat ~/.ssh/id_rsa.pub，得到一串东西，完整的复制这串东西<br>10：回到上面第 3 步的页面，在 Title 输入「我的第一个 key」<br>11：在 Key 里粘贴刚刚你你复制的那串东西<br>12：点击 Add SSH key<br>13：回到 Git Bash<br>14：运行 ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>，你可能会看到这样的提示（Are you sure you want …..）输入y<br>15：然后如果你看到 Permission denied (publickey). 就说明你失败了，请回到第 1 步重来，是的，回到第 1 步重来；如果你看到 Hi FrankFang! You’ve successfully authenticated, but GitHub does not provide shell access. 就说明你成功了！<br>16：依次运行下面五句命令–</p>
+        <p>1：注册git（<a href="https://github.com/）" target="_blank" rel="noopener">https://github.com/）</a><br>2：进入 <a href="https://github.com/settings/keys" target="_blank" rel="noopener">https://github.com/settings/keys</a><br>3：如果页面里已经有一些 key，就点「delete」按钮把这些 key 全删掉。如果没有，就往下看<br>4：点击 New SSH key，你需要输入 Title 和 Key，但是你现在没有 key，往下看<br>5：打开 Git Bash<br>6：复制并运行 rm -rf ~/.ssh/* 把现有的 ssh key 都删掉，这句命令行如果你多打一个空格，可能就要重装系统了，建议复制运行。<br>7：运行 ssh-keygen -t rsa -b 4096 -C “你的邮箱”，注意填写你的邮箱！<br>8：按回车三次<br>9：运行 cat ~/.ssh/id_rsa.pub，得到一串东西，完整的复制这串东西<br>10：回到上面第 3 步的页面，在 Title 输入「我的第一个 key」<br>11：在 Key 里粘贴刚刚你你复制的那串东西<br>12：点击 Add SSH key<br>13：回到 Git Bash<br>14：运行 ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>，你可能会看到这样的提示（Are you sure you want …..）输入y<br>15：然后如果你看到 Permission denied (publickey). 就说明你失败了，请回到第 1 步重来，是的，回到第 1 步重来；如果你看到 Hi （your name）! You’ve successfully authenticated, but GitHub does not provide shell access. 就说明你成功了！<br>16：依次运行下面五句命令–</p>
 <p>git config –global user.name (your的英文名)<br>git config –global user.email (your的邮箱)<br>git config –global push.default matching<br>git config –global core.quotepath false<br>git config –global core.editor “vim”</p>
 <p>17:本地创建仓库–</p>
-<p>任意地方新建XXX文件夹，gitbash进入此文件夹<br>git init，初始化本地仓库<br>git status -sb，显示当前所有文件的状态<br>git add xxx.xx文件路径，用来将变动加到暂存区<br>git commit xxx.xx -m “信息”，用来正式提交变动，提交至 .git 仓库<br>git log 查看变更历史</p>
+<p>任意地方新建XXX文件夹，gitbash进入此文件夹<br>git init，初始化本地仓库<br>git status -sb，显示当前所有文件的状态<br>git add xxx.xx文件路径，用来将变动加到暂存区<br>git commit xxx.xx -m “信息”，用来正式提交变动，提交至 .git 仓库</p>
 <p>18：github上新建空仓库（最好与本地仓库的名字相同）<br>新建空仓库完成后进入的页面点击SSH按钮你会看到以下的<br>git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/git-demo-1.git（将本地仓库与远程仓库关联）<br>git push -u origin master（将本地仓推送到远程仓）</p>
-<p>19：如果想要新建仓库，重复17后的步骤即可。<br>20：纯手工制作！！</p>
+<p>19：如果想要新建仓库，重复17后的步骤即可。</p>
+<p>20：扩展–<br>git log，查看历史提交信息<br>git log –pretty=oneline，精简的历史信息输出<br>git remote -v，显示与本地仓库关联的远程仓库详细的信息<br>git reflog，用来记录你的每一次命令<br>git status, 可以让我们时刻掌握仓库当前的状态,比如文件修改但还没被提交等<br>git diff， 查看上次修改的具体内容<br>git reset –hard HEAD^，回退上次提交的版本（上一个版本就是HEAD^，上上一个版本就是HEAD^^，）<br>git reset –hard 版本号（列：124ea），精确回退版本，这个版本号就是下图红圈标的位置，不用全写完，一般写5位即可<br><img src="/2018/05/30/简单的git入门-饥人谷前端路程/1.png" alt="1"><br><img src="/2018/05/30/简单的git入门-饥人谷前端路程/2.png" alt="2"><br>版本回退是很好，不过前提是你还没有推送到远程库<br>git checkout – file（文件名），可以丢弃该文件在工作区的修改<br>git reset HEAD <file>，可以把暂存区的修改撤销掉（unstage），重新放回工作区<br>git rm file（文件名），删除某文件<br>git branch，查看分支<br>git branch <name>，创建分支<br>git checkout <name>，切换分支<br>git checkout -b <name>，创建+切换分支<br>git checkout -b dev origin/dev 创建远程origin的dev分支到本地<br>git merge <name>，合并某分支到当前分支<br>git merge –no-ff -m “xxx” <name>，合并分支的时候不删除分支存在的信息<br>git branch -d <name>，删除分支<br>git branch -D <name>，强行删除某分支<br>git log –graph，命令可以看到分支合并图<br>git push origin &lt;分支名&gt; 推送分支到远程仓库的对应分支上<br>git stash，把当前工作现场“储藏”起来，等以后恢复现场后继续工作<br>需要恢复的话，有两个办法：<br>一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除<br>另一种方式是用git stash pop，恢复的同时把stash内容也删了<br>git stash list，查看工作现场<br>git tag <name>，就可以打一个新标签<br>git tag，查看所有标签<br>git tag <name>，版本号<br>git tag -a <name> -m “xxx” 版本号， 为版本号多少的打上标签并添加描述xxx<br>git show <tagname>，查看标签信息<br>git tag -d <tagname>，可以删除一个本地标签<br>git push origin <tagname>，可以推送一个本地标签；<br>git push origin –tags，可以推送全部未推送过的本地标签<br>git push origin :refs/tags/<tagname>，可以删除一个远程标签<br>git config –global alias.st status，配置别名，现在git st 跟 git status的效果是一样的<br>21：解决合并分支的冲突问题 用git status查看冲突，必须首先解决冲突，解决冲突后，再提交，合并完成</tagname></tagname></tagname></tagname></name></name></name></name></name></name></name></name></name></name></file></p>
+<p>22：在实际开发中，我们应该按照几个基本原则进行分支管理：<br>首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；<br>那在哪干活呢？干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；<br>你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了<br>或者修复bug时候也可以另创建分支进行修复，然后再合并<br>或者根据新指示添加新的功能也要另创建分支进行添加，然后再合并</p>
+<p>23:多人协作的工作模式通常是这样：<br>首先，可以试图用git push origin &lt;你的分支名&gt;推送自己的修改；<br>如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；<br>如果合并有冲突，则解决冲突，并在本地提交；<br>没有冲突或者解决掉冲突后，再用git push origin &lt;你的分支名&gt;推送就能成功！<br>如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch –set-upstream-to &lt;你的分支名&gt; origin/&lt;你的分支名&gt;。</p>
+<p>20：纯手工制作！！</p>
 
       
     </div>
@@ -444,24 +449,27 @@
               
               
               <div class="site-state-item site-state-tags">
-                
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
           </nav>
 
           
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Dongary" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
           
 
           
